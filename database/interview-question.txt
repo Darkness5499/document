@@ -1,0 +1,7 @@
+1: Cách tối ưu cơ sở dữ liệu, các bước thực hiện của câu lệnh sql, chiến lược thực thi câu lệnh
+2: Có những kiểu đánh index nào
+3: Cách index hoạt động trong oracle
+3: có những kiểu đánh partition nào
+4: Cách partition hoạt động trong oracle
+5: Thiết kế cơ sở dữ liệu như thế nào
+6: RAC Real Application Cluster
