@@ -1,0 +1,20 @@
+1. Các tính chất của OOP
+2: sự khác nhau giữa interface và abstract
+3. Sự khác nhau giữa linkedlist và arraylist, cơ chế crud trên arraylist và linkedlist
+4. Cấu trúc của map, hashmap, treemap...
+5. Luồng, cách khởi tạo luồng, sử dụng bất đồng bộ completeablefuture
+6. Volatile, Synchronized và static
+7. SOLID
+8: String pool, String buffer
+9: Stack và heap
+
+
+
+------Spring
+1. Spring core, vòng đời
+2. Dependency injection là gì
+3. Cách inject bean, sự khác nhau 
+4. Spring data jpa, hibernate, cấu trúc, cơ chế hoạt động 
+5: Spring security, Các annotation để chặn request, @PreAuth, HasRole?...
+6: Spring cloud, các thành phần, spring feign
+7: Spring filter chain partten 
