@@ -10,11 +10,13 @@
 3. Sự khác nhau giữa linkedlist và arraylist, cơ chế crud trên arraylist và linkedlist
 4. Cấu trúc của map, hashmap, treemap...
 5. Luồng, cách khởi tạo luồng, sử dụng bất đồng bộ completeablefuture, cách tạo và quản lý thread, Thread pool là gì? Thread Excuter.
+Thread, Runable -> ExecutorService -> Future, Callable -> CompletableFuture(Java 8)
 6. Volatile, Synchronized và static
 7. SOLID
 8: String pool, String buffer
 9: Stack và heap
 10. Sử dụng stream chưa? khác gì thông thường không? tốc độ khác gì không? tại sao phải sử dụng or not?
+11. equals và hashCode có ý nghĩa gì, cách Set hoạt dộng?
 
 
 
