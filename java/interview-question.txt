@@ -9,19 +9,12 @@
 2: sự khác nhau giữa interface và abstract
 3. Sự khác nhau giữa linkedlist và arraylist, cơ chế crud trên arraylist và linkedlist
 4. Cấu trúc của map, hashmap, treemap...
-5. Luồng, cách khởi tạo luồng, sử dụng bất đồng bộ completeablefuture
+5. Luồng, cách khởi tạo luồng, sử dụng bất đồng bộ completeablefuture, cách tạo và quản lý thread, Thread pool là gì? Thread Excuter.
 6. Volatile, Synchronized và static
 7. SOLID
 8: String pool, String buffer
 9: Stack và heap
+10. Sử dụng stream chưa? khác gì thông thường không? tốc độ khác gì không? tại sao phải sử dụng or not?
 
 
 
-------Spring
-1. Spring core, vòng đời
-2. Dependency injection là gì
-3. Cách inject bean, sự khác nhau 
-4. Spring data jpa, hibernate, cấu trúc, cơ chế hoạt động 
-5: Spring security, Các annotation để chặn request, @PreAuth, HasRole?...
-6: Spring cloud, các thành phần, spring feign
-7: Spring filter chain partten 
