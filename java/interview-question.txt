@@ -1,4 +1,11 @@
 1. Các tính chất của OOP
+	Trả lời: Đóng gói, kế thừa, đa hình, trừu tượng
+	Tính đa hình: Ghi đè - overwrite, nạp chồng: overload
+	Tính trừu tượng: Abstract Class và Interface
+	Abstract cho phép viết các method như class bình thường và abstract method
+	Interface chỉ định nghĩa hàm và không có thân hàm.
+	Ý nghĩa: Interface quy định input, output, tránh việc sửa đổi tham số đầu ra đầu vào ảnh hưởng tới các hàm đang sử dụng, không quan tâm cách thực thi bên trong
+	Abstract có method bắt buộc tuân theo, những abstract method khác có thế tuỳ ý implement
 2: sự khác nhau giữa interface và abstract
 3. Sự khác nhau giữa linkedlist và arraylist, cơ chế crud trên arraylist và linkedlist
 4. Cấu trúc của map, hashmap, treemap...

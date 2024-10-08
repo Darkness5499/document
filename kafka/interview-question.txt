@@ -1,0 +1,5 @@
+1 Các thành phần của kafka?
+2. Khi nào sử dụng kafka?
+3. Ý nghĩa và cách sử dụng từng thành phần?
+4. Nhiều consumer cùng consume 1 topic? làm thế nào để các Consumer không xử lý trùng 1 message?
+5. Trong microservice. Sử dụng cách nào để xử lý vấn đề giữa các service khi 1 service bị lỗi và không thể xử lý yêu cầu
