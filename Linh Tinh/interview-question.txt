@@ -1,0 +1,22 @@
+Tên Công Ty: Techcombank
+Vị trí tuyển dụng: Senior Officer/ Techlead/ teamlead (java)
+Thời gian: 2022
+Yêu cầu chung (tóm tắt):
+Sử dụng tốt ngôn ngữ lập trình Java core, spring framework
+Lập trình thành thạo với hệ CSDL: Oracle (Oracle là lợi thế), Postgresql
+Ưu tiên làm việc với hệ thống queue như : Kafka,
+Có kinh nghiệm làm microservices, distributed system
+Quản lý 1 team nho nhỏ
+Quá trình phỏng vấn
+2 round
+- Round 1:
+Test online trên imocha gồm các phần core về java( exception, thread, collections). spring framework (beans, DI/IoC,JPA). Design pattern
+- Round 2: phỏng vấn online qua webex
+Người phỏng vấn: 3 anh SA
+Một số câu hỏi/ chủ đề phỏng vấn:
+Kiến thức cơ bản: Java core, heap and stack, garbage collector, IoC, Spring, SOLID, database recovery. Lấy dữ liệu qua lại giữa các database của distributed system...
+Kiến thức thực tế aka kinh nghiệm làm việc: nhìn vào CV hỏi dự án nào tâm đắc nhất, vì sao lại thấy nó tâm đắc? techstack của dự án là gì? Xử lý các vấn đề trong dự án gặp phải (concurrent, realtime...). Sau đó 1 anh hỏi dự án có áp dụng design pattern nào ko, nếu có thì nó là gì? nó giải quyết vấn đề gì, áp dụng nó như thế nào? Rồi 3 anh cùng quây đưa ra các trường hợp có thể xảy ra với dự án đó (giả định) rồi yêu cầu mình đưa ra cách giải quyết.
+Cách viết unittest aka sử dụng jmockit, mockito ....
+Tiếp đó hỏi về cách quản lý team, khi team có các thành viên không ổn (tech) thì sẽ giải quyết ra sao?. Phân chia việc như thế nào? Xử lý mâu thuẫn ra sao.
++ Gợi ý/ Lời khuyên:
+- Các câu hỏi cần làm và trải nghiệm thực. Ôn kỹ lý thuyết của core java. Đọc cuốn design của alex Xu trả lời được tương đối nhiều vấn đề. Thẳng thắn trả lời các vấn đề, ko vòng vo. Đọc qua 1 chút về distributed system. Thái độ phỏng vấn là 1 điểm khá là quan trọng :D

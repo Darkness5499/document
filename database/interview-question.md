@@ -12,7 +12,7 @@
 10. Sự khác nhau giữa where và in
 11. Hiểu biết vê primary key, constraints, sequence, trigger, sử dụng temporary table, bulk collection trong *oracle*
 12. Hiểu biết gì về transaction
-
+ORMs, ACID, Transactions, N+1 Problems Db Normalization, Indexes) và cụm (Data Replication, Sharding Strategies, CAP Theorem)
 
 ### Câu hỏi tình huống
 1. Giả sử có 1 bảng lưu trữ các tên thư mục, thư mục A chứa B, B chứa CDED... thì thiết kế như thế nào? (Mở rộng theo chiều ngang, thư mục con chứa ID parent foler)
