@@ -17,6 +17,8 @@ Thread, Runable -> ExecutorService -> Future, Callable -> CompletableFuture(Java
 9: Stack và heap
 10. Sử dụng stream chưa? khác gì thông thường không? tốc độ khác gì không? tại sao phải sử dụng or not?
 11. equals và hashCode có ý nghĩa gì, cách Set hoạt dộng?
+12. Bao nhiêu thread là đủ? Có phải cứ có nhiều thread là nhanh hơn không? Cách tính toán số lượng thread đủ
+
 
 
 
