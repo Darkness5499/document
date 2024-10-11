@@ -32,4 +32,10 @@
 
 
 
+### Quartz
+1. Tại sao phải dùng Quartz?
+2. Tách riêng 1 service 1 Service Schedule có được không? Băng cách nào?
+3. Không cùng database thì tách biệt kiểu gì?
+4. Nếu 1 service có nhiều instance cùng chạy, dùgn annotation @Schedule time bằng nhau hết thì chạy kiểu gì? Cái nào trước cái nào sau, có conflict gì không
+
 ### Các thành phần khác
