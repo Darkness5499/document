@@ -1,7 +1,7 @@
 # Database interview question
 ## Câu hỏi kiến thức
 1. Cách tối ưu cơ sở dữ liệu, các bước thực hiện của câu lệnh sql, chiến lược thực thi câu lệnh, có những cách nào để tối ưu câu truy vấn?
-2. Có những kiểu đánh index nào, đánh index cần lưu ý những gì
+2. Có những kiểu đánh index nào, đánh index cần lưu ý những gì, loại index
 3. Cách index hoạt động trong oracle
 4. có những kiểu đánh partition nào
 5. Cách partition hoạt động trong oracle

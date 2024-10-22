@@ -7,18 +7,34 @@
 	Ý nghĩa: Interface quy định input, output, tránh việc sửa đổi tham số đầu ra đầu vào ảnh hưởng tới các hàm đang sử dụng, không quan tâm cách thực thi bên trong
 	Abstract có method bắt buộc tuân theo, những abstract method khác có thế tuỳ ý implement
 2: sự khác nhau giữa interface và abstract
+	Interface được coi là quy ước lập trình
+	Quy định input output của các service, khi có thay đổi implement cũng không làm ảnh hưởng tới service khác khi sử dụng nó
+
 3. Sự khác nhau giữa linkedlist và arraylist, cơ chế crud trên arraylist và linkedlist
-4. Cấu trúc của map, hashmap, treemap...
+	Linklist sử dụng con trỏ lưu địa chỉ của biến tiếp theo
+	Các phần tử trong LinkedList là các node, các node sẽ lưu địa chỉ có binế tiếp theo
+	Arraylist khi vượt quá số lượng phần tử sẽ sao chép sang 1 mảgn mới mặc định có kích thước gấp 1,5 lần mảng cũ và insert data, khởi tạo mặc định capacity = 10
+
+4. Cấu trúc của map, hashmap, treemap, set
+	HashSet, HashMap là array of linkedList
+	Sau khi hash sẽ đưa các giá trị vào 1 linkedlist có giá trị hash giống nhau
+	Sau đó sẽ dùng hàm equal để so sánh các giá trị trong linkedlist đó, nếu trùng sẽ không add thêm phần tử
+
 5. Luồng, cách khởi tạo luồng, sử dụng bất đồng bộ completeablefuture, cách tạo và quản lý thread, Thread pool là gì? Thread Excuter.
 Thread, Runable -> ExecutorService -> Future, Callable -> CompletableFuture(Java 8)
+ThreadPool là 1 pool quản lý số lượng các thread, khi quản lý maxpool size của thread
 6. Volatile, Synchronized và static
+	Synchronized sẽ chỉ cho phép 1 thread truy cập tại 1 thời điểm
 7. SOLID
 8: String pool, String buffer
+
 9: Stack và heap
+
 10. Sử dụng stream chưa? khác gì thông thường không? tốc độ khác gì không? tại sao phải sử dụng or not?
+	Stream cung cấp các api 
 11. equals và hashCode có ý nghĩa gì, cách Set hoạt dộng?
 12. Bao nhiêu thread là đủ? Có phải cứ có nhiều thread là nhanh hơn không? Cách tính toán số lượng thread đủ
-
+13. Generic và Java refection, cách viết annotation, reflection chạy ở thời điểm nào
 
 
 

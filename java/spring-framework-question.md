@@ -38,4 +38,7 @@
 3. Không cùng database thì tách biệt kiểu gì?
 4. Nếu 1 service có nhiều instance cùng chạy, dùgn annotation @Schedule time bằng nhau hết thì chạy kiểu gì? Cái nào trước cái nào sau, có conflict gì không
 
+### Spring circuit breaker
+Các implement? Giải quyết vấn đề gì
+
 ### Các thành phần khác
