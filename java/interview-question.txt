@@ -35,6 +35,8 @@ ThreadPool là 1 pool quản lý số lượng các thread, khi quản lý maxpo
 11. equals và hashCode có ý nghĩa gì, cách Set hoạt dộng?
 12. Bao nhiêu thread là đủ? Có phải cứ có nhiều thread là nhanh hơn không? Cách tính toán số lượng thread đủ
 13. Generic và Java refection, cách viết annotation, reflection chạy ở thời điểm nào
+14. Phân biệt overriding và overloading
+15. Cách hoạt động của Garbage Collection
 
 
 
