@@ -38,5 +38,8 @@ ThreadPool là 1 pool quản lý số lượng các thread, khi quản lý maxpo
 14. Phân biệt overriding và overloading
 15. Cách hoạt động của Garbage Collection
 
+https://github.com/in28minutes/JavaInterviewQuestionsAndAnswers
+
+
 
 
