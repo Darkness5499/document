@@ -41,5 +41,3 @@ ThreadPool là 1 pool quản lý số lượng các thread, khi quản lý maxpo
 https://github.com/in28minutes/JavaInterviewQuestionsAndAnswers
 
 
-
-

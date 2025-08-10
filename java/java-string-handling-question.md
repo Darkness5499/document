@@ -16,9 +16,13 @@
 ### How does hashCode() behave for two equal strings?
 
 ### What are interned strings in Java? When should you use intern() method?
+intern() method add a string to pool
 
 ### What are the thread-safety differences between StringBuffer and StringBuilder?
 
 ### Which class should you use for frequent string modifications, and why?
+it depends on single-thread or multi-thread, if single => StringBuilder whereas StringBuffer because String is immutable, it will create new object
 
 ### What is String pool?
+The String Pool in Java is a special area in memory (inside the heap) where String literals are stored and reused to save memory.
+if you use new keyword, new String created in the heap, not pool
