@@ -1,11 +1,14 @@
 ### Java Garbage Collection
+
 It automatically removes the objects that are no longer in use
+
 ##
 
 ### Difference between JDK, JRE, and JVM?
+
 - JVM: A virtual machine that runs file .class, Convert bytecode into machine code for your OS/CPU in runtime
 - JRE: A package that contains the JVM + libraries + other files needed to run Java programs.
-- JDK: Java development kit, A complete package for Java development. allows developer run java application 
+- JDK: Java development kit, A complete package for Java development. allows developer run java application
 
 ### Explain the 4 main principles of OOP
 
@@ -14,6 +17,7 @@ It automatically removes the objects that are no longer in use
 ### Difference between checked and unchecked exceptions.
 
 ### What is the difference between throw and throws?
+
 - throw uses inside method body
 - throws uses when declare a mothod can throws exceptions
 
