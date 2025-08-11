@@ -32,7 +32,15 @@ It automatically removes the objects that are no longer in use
 
 ### overriding vs overloading
 
-### Stream in java
 
-### Java generic, java reflection 
+### stack and heap in Java
 
+### Shallow copy vs deep copy
+
+### Advanced Java Features
+- java generic
+- Java reflection
+- Java stream
+
+
+# Situational question
