@@ -34,6 +34,7 @@
 23. What is the role of `@Transactional` annotation?
 24. How does Spring handle transaction propagation levels?
 25. What are isolation levels in Spring transactions?
+câu hỏi tình huống transaction, 2 transaction lồng nhau, bản chất thực sự của transaction có tạo ra connection không
 
 ### Performance & Optimization
 26. How to optimize memory usage in a Spring application?
