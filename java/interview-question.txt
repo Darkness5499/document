@@ -40,4 +40,12 @@ ThreadPool là 1 pool quản lý số lượng các thread, khi quản lý maxpo
 
 https://github.com/in28minutes/JavaInterviewQuestionsAndAnswers
 
+Nếu e khai báo 1 biến là int count = 0
+Thì dùng stream.foreach count++ thì giá trị count có tăng lên không
+
+E biết B script không
+Rồi so sánh B tree indexx với hash index
+
+Không sử dụng @query, không sử dụng string builder, làm sao để viết 1 câu search 3 trường
+
 
