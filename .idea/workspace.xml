@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5603056-9c19-497c-938a-b5f55d8f8be3" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/security-knowledge/img.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/interview-question.txt" beforeDir="false" afterPath="$PROJECT_DIR$/java/interview-question.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/java-core-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/java-core-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice/Level MBbank/hình ảnh (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-system-design/Level MBbank/hình ảnh (1).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice/Level MBbank/hình ảnh (2).png" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-system-design/Level MBbank/hình ảnh (2).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice/Level MBbank/hình ảnh (3).png" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-system-design/Level MBbank/hình ảnh (3).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice/Level MBbank/hình ảnh.png" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-system-design/Level MBbank/hình ảnh.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-system-design/img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice/interview-question.txt" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-system-design/interview-question.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/java-thread-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/java-thread-question.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +73,7 @@
       <workItem from="1739779912308" duration="587000" />
       <workItem from="1739780507587" duration="14000" />
       <workItem from="1754791353799" duration="13327000" />
-      <workItem from="1754989207481" duration="32437000" />
+      <workItem from="1754989207481" duration="37239000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -107,7 +99,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754930486018</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <option name="closed" value="true" />
+      <created>1757326406427</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1757326406427</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update">
+      <option name="closed" value="true" />
+      <created>1757326419062</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1757326419062</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
