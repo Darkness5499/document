@@ -2,7 +2,12 @@
 
 ### Basic Concepts
 1. What is the Spring Framework and what problems does it solve?
+   - Spring framework is a Java-based open-source framework that provides comprehensive programing
+and configuration model for modern enterprise applications.
+   - Spring makes java development easier by providing dependency management, reducing boilerplate
+and offering modular, enterprise-level features
 2. Explain the concept of Inversion of Control (IoC) and how Spring implements it.
+    - 
 3. What is Dependency Injection (DI) in Spring and what are its different types?
 4. Explain the role of the ApplicationContext in Spring.
 5. What are Spring Beans and how are they managed?

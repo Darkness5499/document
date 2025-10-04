@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5603056-9c19-497c-938a-b5f55d8f8be3" name="Changes" comment="update">
+    <list default="true" id="e5603056-9c19-497c-938a-b5f55d8f8be3" name="Changes" comment="update thread QA">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_9_25,_16_21_[Changes]/hình ảnh (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_9_25,_16_21_[Changes]/hình ảnh (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_9_25,_16_21_[Changes]/hình ảnh (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_9_25,_16_21_[Changes]/hình ảnh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_9_25,_16_21_[Changes]/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_9_25,_16_21_[Changes]/img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_9_25,_16_21_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_9_25__16_21__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/java-thread-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/java-thread-question.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/interview-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/interview-question.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/spring-core-question1.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-core-question1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +82,10 @@
       <workItem from="1739779912308" duration="587000" />
       <workItem from="1739780507587" duration="14000" />
       <workItem from="1754791353799" duration="13327000" />
-      <workItem from="1754989207481" duration="37239000" />
+      <workItem from="1754989207481" duration="42477000" />
+      <workItem from="1757581184901" duration="1857000" />
+      <workItem from="1757594433453" duration="9047000" />
+      <workItem from="1759420840666" duration="541000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -115,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757326419062</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update thread QA">
+      <option name="closed" value="true" />
+      <created>1757407908756</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1757407908756</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +155,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update string question" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update thread QA" />
+    <option name="LAST_COMMIT_MESSAGE" value="update thread QA" />
   </component>
 </project>
