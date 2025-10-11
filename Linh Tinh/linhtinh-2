@@ -1,0 +1,48 @@
+Mục tiêu vị trí
+
+Trở thành kỹ sư nòng cốt tham gia thiết kế kiến trúc hệ thống scalable, stable, tối ưu CSDL, triển khai tính năng end-to-end (backend Java, frontend Angular/Flutter), lan tỏa chuẩn code & bảo mật trong team.
+
+Nhiệm vụ chính
+
+Thiết kế kiến trúc hệ thống & CSDL: phân rã dịch vụ, mô hình dữ liệu, chiến lược phân mảnh/partitioning, index, tối ưu truy vấn, đảm bảo tính sẵn sàng & khả năng mở rộng.
+Phát triển tính năng mới: backend (Java/Spring) và frontend (Angular/Flutter) từ phân tích → thiết kế → hiện thực → kiểm thử.
+Review code: bảo đảm chuẩn SOLID, clean code, bảo mật, hiệu năng; hỗ trợ refactor.
+Trao đổi sản phẩm: làm việc chặt chẽ với Product/Design/QA/Tech Leads để làm rõ yêu cầu, đề xuất giải pháp kỹ thuật.
+Vận hành & chất lượng (khi cần): viết test (unit/integration/e2e), tối ưu CI/CD, theo dõi log/metrics/tracing, xử lý sự cố & tối ưu hiệu năng.
+Yêu cầu công việc
+Back-end (Java):
+
+Vững Java (collections, concurrency, JVM tuning), Spring Boot, RESTful API, WebSocket; hiểu design patterns & SOLID.
+Thiết kế hệ thống scalable & stable (caching, stateless, horizontal scaling, circuit-breaker, idempotency, retry/backoff, eventual consistency).
+Front-end:
+
+Angular: component architecture, RxJS, state management, routing, build/optimize.
+Flutter: widget tree, state management (Bloc/Provider), navigation, performance.
+CSDL:
+
+Thiết kế lược đồ, chuẩn hóa/denormalize hợp lý; tối ưu index, explain/plan, transaction & isolation; nắm vững ACID/locking.
+Message brokers: kinh nghiệm thực tế với Kafka & RabbitMQ (topic/queue design, consumer group, partitioning, DLQ, exactly-once/at-least-once).
+Bảo mật:
+
+OWASP Top 10, secure coding, authN/authZ (OAuth2/OIDC/JWT), secrets management, bảo mật API & dữ liệu.
+Thuật toán & DSA: tư duy phân tích vấn đề, ước lượng độ phức tạp, cấu trúc dữ liệu phù hợp; kỹ năng debug mạnh.
+Thói quen làm việc: viết test, code review, tài liệu hoá; giao tiếp tốt, chủ động ownership.
+Lợi thế (nice to have)
+
+Trải nghiệm microservices, Docker/Kubernetes, GitOps/CI-CD.
+Kinh nghiệm với Redis/Elasticsearch/ClickHouse; gRPC/GraphQL.
+Quan sát hệ thống: Prometheus/Grafana, OpenTelemetry, ELK/EFK.
+Hiểu biết về hiệu năng front-end (bundle size, TTI) & mobile (rendering, jank).
+Chỉ số kỳ vọng
+
+5+ năm kinh nghiệm phát triển phần mềm (ưu tiên full-stack, thiên backend).
+Dẫn dắt kỹ thuật 1–2 stream công việc; mentor 1–2 thành viên.
+Thiết kế & hiện thực 1 module/dịch vụ end-to-end đạt SLA/SLI đã cam kết.
+Tại sao bạn sẽ yêu thích làm việc tại đây
+Nghỉ cố định Thứ 7 và Chủ nhật, thời gian làm việc linh hoạt.
+Review lương 2 lần/năm (nếu làm tốt), tối thiểu 1 lần/ năm.
+Lương thưởng tháng 13, du lịch hằng năm, year end party,...
+Môi trường làm việc năng động, sáng tạo và cơ hội thăng tiến cao.
+Được tham gia các trình đào tạo nâng cao kỹ năng và kiến thức chuyên môn.
+Được tiếp cận với sản phẩm, xu hướng về Công nghệ hàng đầu Thế giới,...
+Các chế độ theo Luật lao động hiện hành BHXH, Thưởng Lễ, Tết, Sinh nhật...và các phúc lợi theo quy định của Công ty.

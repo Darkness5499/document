@@ -9,4 +9,7 @@
 9. Kafka có cơ chế chịu lỗi như thế nào? Message xử lý lỗi thì kafka làm gì? 
 10. Có 30k messages, 3 partitions, 3 consumers, message được phân chia cho các consumer thế nào, consumer thứ 3 tiêu thụ 1 message 5s
     mới xong, trong khi các consumer khác real time xong ngay lập tcứ, lâu hơn các consumer khác, thì các consumer khác có tiêu thụ message hộ không?
-11. Có 2 partition và 3 consumer thì tiêu thụ message như thế nào?    
+11. Có 2 partition và 3 consumer thì tiêu thụ message như thế nào?
+
+## REFERENCE
+Kafka Interview questions and answers for 2024 for Experienced: https://www.youtube.com/watch?v=Q7tU0B1bnSE

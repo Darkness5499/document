@@ -44,3 +44,11 @@ It depends on the type of task, because creating too many threads incurs overhea
 ### Compare-And-Swap (CAS)
 - **CAS** is an atomic operation that updates a variable only if it matches an expected value.
 - Used in `Atomic` classes, avoids locks, improves performance in concurrent programming.  
+
+### start() and run()?
+
+
+## REFERENCE
+Java Multithreading Interview Questions: https://www.youtube.com/watch?v=AfVbJDr-8ic
+Java Multithreading Interview: https://www.youtube.com/watch?v=ITPesAZFvWI
+

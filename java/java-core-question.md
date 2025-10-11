@@ -37,7 +37,7 @@ It automatically removes the objects that are no longer in use
 ### What is the difference between throw and throws?
 
 - throw: uses inside method body
-- throws: uses when declare a mothod can throws certain exceptions
+- throws: uses when declare a method can throws certain exceptions
 
 ### Difference between interface and abstract class?
 
@@ -64,6 +64,9 @@ It automatically removes the objects that are no longer in use
   - value cannot be changed, method cannot be overridden, class can not be inherited 
 
 ### overriding vs overloading
+- Method Overloading is a form of compile-time polymorphism. It occurs when multiple methods in the same class have the same name but different parameter lists. The compiler determines which method to call based on the method signature.
+
+- Method Overriding is a form of runtime polymorphism. It happens when a subclass provides its own implementation of a method that exists in the parent class. The method in the subclass must have the same name, parameters, and return type as the parent method, and it’s resolved dynamically at runtime.
 
 
 ### stack and heap in Java
@@ -78,17 +81,18 @@ It automatically removes the objects that are no longer in use
 
 
 
-### Shallow copy vs deep copy
 
 
-### Advanced Java Features
-- java generic
-
-- Java reflection
-
-
-- Java stream
 
 
 # Situational question
 
+
+https://topdev.vn/blog/tranh-loi-concurrentmodificationexception-trong-java-nhu-the-nao/?utm_source=google&utm_medium=cpc&gad_source=1&gad_campaignid=22868613541&gbraid=0AAAAADDtBSD37UU_YrBvxixC3lEDz8OoP&gclid=Cj0KCQjw9JLHBhC-ARIsAK4PhcoCTVFusyzxusomCGu0PsQuSMStEcIzxf1c03ooks8awsAw_QZXSvsaAtd7EALw_wcB
+
+
+## REFERENCE
+Core Java Interview Questions & Answers: https://www.youtube.com/watch?v=FFfJeb8Ec6Y
+github: https://github.com/Devinterview-io/java-interview-questions
+github: https://github.com/a11exe/java-interview?tab=readme-ov-file
+github: https://github.com/mertsaner/java-interview-questions/blob/master/collections-questions.md

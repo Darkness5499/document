@@ -35,3 +35,8 @@
 8. Explain how Spring Security handles concurrent sessions for the same user.
 9. How would you implement a custom security filter and place it at a specific position in the filter chain?
 10. How does Spring Security handle thread safety when storing authentication information?
+
+
+# REFERENCE
+SPRING SECURITY JAVA TECHIE: https://www.youtube.com/watch?v=J8I3s0sSP0c&list=PLVz2XdJiJQxynOpTm0DuufOkfWHNamJsF
+CODE DECODE CHANEL: https://www.youtube.com/watch?v=rb3wUXZD2EQ&list=PLyHJZXNdCXseGWynh6MlMrC_CmV0dR8mF

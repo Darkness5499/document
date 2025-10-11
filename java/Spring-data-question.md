@@ -28,3 +28,7 @@
 8. You need to perform batch inserts or updates using Spring Data JPA. How would you configure it?
 9. You want to implement auditing (created date, updated date, created by, updated by) in all entities. How would you do it in Spring Data JPA?
 10. You need to execute a stored procedure from Spring Data JPA. How would you handle it?
+
+
+## REFERENCE
+SPRING TRANSACTION JAVA TECHIE: https://www.youtube.com/watch?v=eWl8G7NDKqo&list=PLVz2XdJiJQxxj_zMhm6zCPO6zhtOcq-wl

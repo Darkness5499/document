@@ -50,3 +50,6 @@ câu hỏi tình huống transaction, 2 transaction lồng nhau, bản chất th
 
 
 # Situational question
+
+## REFERENCE
+Spring Boot Interview Mastery SERIES, JAVA TECHIE: https://www.youtube.com/watch?v=IdTdgTBXlFw

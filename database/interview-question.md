@@ -24,3 +24,5 @@ ORMs, ACID, Transactions, N+1 Problems Db Normalization, Indexes) và cụm (Dat
 1. Giả sử có 1 bảng lưu trữ các tên thư mục, thư mục A chứa B, B chứa CDED... thì thiết kế như thế nào? (Mở rộng theo chiều ngang, thư mục con chứa ID parent foler)
 
 n+1
+
+### Pessimistic Locking Optimistic Locking
