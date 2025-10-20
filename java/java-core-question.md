@@ -81,7 +81,7 @@ It automatically removes the objects that are no longer in use
 
 
 
-
+### Virtual thread in java 21
 
 
 
@@ -96,3 +96,4 @@ Core Java Interview Questions & Answers: https://www.youtube.com/watch?v=FFfJeb8
 github: https://github.com/Devinterview-io/java-interview-questions
 github: https://github.com/a11exe/java-interview?tab=readme-ov-file
 github: https://github.com/mertsaner/java-interview-questions/blob/master/collections-questions.md
+200 question about java core: https://www.geeksforgeeks.org/java/java-interview-questions/

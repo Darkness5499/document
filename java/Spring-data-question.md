@@ -32,3 +32,6 @@
 
 ## REFERENCE
 SPRING TRANSACTION JAVA TECHIE: https://www.youtube.com/watch?v=eWl8G7NDKqo&list=PLVz2XdJiJQxxj_zMhm6zCPO6zhtOcq-wl
+JDBC: https://techmaster.vn/posts/36899/100-cau-hoi-phong-van-java-phan-3-jdbc
+
+
