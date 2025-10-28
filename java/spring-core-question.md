@@ -42,3 +42,5 @@
 Các implement? Giải quyết vấn đề gì
 
 ### Các thành phần khác
+
+[Spring Boot] Xử lý sự kiện với @EventListener + @Async

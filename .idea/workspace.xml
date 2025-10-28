@@ -4,21 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5603056-9c19-497c-938a-b5f55d8f8be3" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/java/SpringBoot_Interview_Questions_By_Module.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/images/Spring security.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/images/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/images/spring-boot-features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/java-design-patterns.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/spring-aop.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/spring-circuit-breaker.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/spring-quarts.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/spring-unit-test.md" afterDir="false" />
+    <list default="true" id="e5603056-9c19-497c-938a-b5f55d8f8be3" name="Changes" comment="update câu hỏi phỏng vấn database">
+      <change afterPath="$PROJECT_DIR$/docker/interview-question.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/config k8s/admin-user.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/step.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak/guide.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx/interview-question.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/interview-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/interview-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/Spring-data-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/Spring-data-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/java-core-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/java-core-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/spring-security.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-security.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/interview-question.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OS/directory-structure.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elk-stack/interview-question.txt" beforeDir="false" afterPath="$PROJECT_DIR$/elk-stack/interview-question.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/spring-aop.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-aop.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/spring-circuit-breaker.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-circuit-breaker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/spring-cloud-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-cloud-question.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/spring-core-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-core-question.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/spring-quarts.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-quarts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/interview-question.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/guide.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +41,10 @@
     &quot;accountId&quot;: &quot;839dca99-85c0-41b3-808b-d94c52179229&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -52,19 +57,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Volumes/Workspace/document/k8s",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/k8s" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -92,7 +103,7 @@
       <workItem from="1759613918199" duration="32062000" />
       <workItem from="1760439608647" duration="15567000" />
       <workItem from="1760600899756" duration="1554000" />
-      <workItem from="1760846183540" duration="16725000" />
+      <workItem from="1760846183540" duration="62741000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -158,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760198106942</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update câu hỏi phỏng vấn database">
+      <option name="closed" value="true" />
+      <created>1760943429026</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1760943429026</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +198,7 @@
     <MESSAGE value="update string question" />
     <MESSAGE value="update thread QA" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update câu hỏi phỏng vấn database" />
+    <option name="LAST_COMMIT_MESSAGE" value="update câu hỏi phỏng vấn database" />
   </component>
 </project>
