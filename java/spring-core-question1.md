@@ -53,3 +53,4 @@ câu hỏi tình huống transaction, 2 transaction lồng nhau, bản chất th
 
 ## REFERENCE
 Spring Boot Interview Mastery SERIES, JAVA TECHIE: https://www.youtube.com/watch?v=IdTdgTBXlFw
+full 7 parts interview java techie: https://medium.com/@javatechie/spring-boot-in-depth-interview-faqs-62edf6cda4e7

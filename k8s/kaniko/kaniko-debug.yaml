@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kaniko-debug
+  namespace: jenkins
+spec:
+  restartPolicy: Never
+  containers:
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:debug
+    command:
+      - /busybox/sh
+    args:
+      - -c
+      - sleep infinity
+    env:
+      - name: DOCKER_CONFIG
+        value: /kaniko/.docker
+    volumeMounts:
+      - name: kaniko-secret
+        mountPath: /kaniko/.docker/config.json
+        subPath: .dockerconfigjson
+      - name: kaniko-workspace
+        mountPath: /workspace
+
+  volumes:
+    - name: kaniko-workspace
+      emptyDir: {}
+    - name: kaniko-secret
+      secret:
+        secretName: harbor-cred
