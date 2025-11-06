@@ -155,3 +155,4 @@ INDEX_TYPE INDEX idx_emp_name ON employees (last_name);
 5. Phi chuẩn hoá có kiểm soát là gì
     - là thêm các cột thông tin đã có ở các bảng khác để đỡ phải join
 6. Tạo sẵn bảng lưu kết quả câu truy vấn phức tạp
+7. có 100 triệu user cần tìm 1 user tồn tại thì làm thế nào?

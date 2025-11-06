@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis
+    command: ["redis-server", "--requirepass", "mypassword"]
+    ports:
+      - "6379:6379"
+
+  redis-insight:
+    image: redis/redisinsight:latest
+    container_name: redis-insight
+    ports:
+      - "5540:5540"
+    depends_on:
+      - redis
+
+url: redis-14383.c261.us-east-1-4.ec2.redns.redis-cloud.com:14383
+pw: uGGXcrQ0QkhdKZLuuR339cKZoSsYLXDR
+https://cloud.redis.io/#/databases/13703598/subscription/2978397/view-bdb/configuration
