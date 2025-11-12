@@ -1,23 +1,41 @@
 1 Các thành phần của kafka?
+
 2. Khi nào sử dụng kafka?
+
 3. Ý nghĩa và cách sử dụng từng thành phần?
+
 4. Nhiều consumer cùng consume 1 topic? làm thế nào để các Consumer không xử lý trùng 1 message?
+
 5. Trong microservice. Sử dụng cách nào để xử lý vấn đề giữa các service khi 1 service bị lỗi và không thể xử lý yêu cầu
+
 6. Bao nhiêu partition? Consumer là đủ?
+
 7. Cách phân chia message? giả sử có 5 partition, 6 consumer hoặc khác?
+
 8. Khi producer public message thì luồng đi của message sẽ như thế nào? được quản lý như thế nào?
+
 9. Kafka có cơ chế chịu lỗi như thế nào? Message xử lý lỗi thì kafka làm gì? 
+
 10. Có 30k messages, 3 partitions, 3 consumers, message được phân chia cho các consumer thế nào, consumer thứ 3 tiêu thụ 1 message 5s
     mới xong, trong khi các consumer khác real time xong ngay lập tcứ, lâu hơn các consumer khác, thì các consumer khác có tiêu thụ message hộ không?
+
 11. Có 2 partition và 3 consumer thì tiêu thụ message như thế nào?
+
 12. Cho 1 case thực tế, xác định dạng message cùng các luồng, redis thì chẳng hạn chỉ lưu được 100k nhưng có 1m dữ liệu muốn lưu, hỏi khá sâu về partition và cơ chế gửi đến nhiều partition và gửi lại khi lỗi nữa
+
 13. tối ưu thì chỉ có cụm, bao nhiêu broker là đủ, tính toán ra sao, xử lý thì chúng nó đã nhanh sẵn rồi, kafka nắm được cơ chế gửi nhận msg, msg đi vào par nào theo key và k key, consumer consume thế nào, lỗi thì retry ra sao, DLQ, đang trơn tru tự nhiên broker sập thì xử lí thế nào, msg sắp đến tay, chưa kịp commit offset thì tèo,... nhiều msg quá thì scale consumer lên chung 1 group, tăng số lượng partitions...
+
 14. trong project BPM, BCCS3 dùng kafka đoạn nào? xử lý thế nào? gặp lỗi gì? ví dụ đang build service mà có message kafka cần handle, nó không tự handle hoặc nghẽn làm thế nào
+
 15. ý người phỏng vấn hỏi giá trị mặc định hả ta ? mình đọc cũng ko hiểu ý câu hỏi lắm
 mà "độ trễ tối đa" là cái gì nhỉ ? Nếu là thời gian tối đa giữa 2 lần poll thì là 300000ms (5 phút)
 còn nếu là thời gian tối đa consumer có thể mất kết nối với Kafka broker trước khi bị coi là "chết" thì là 45000ms (45s)
+
 16. nó rất nhiều vấn đề mập mờ ở đây :D:D ví dụ kafka là pull batch, nếu size batch quá lớn, mỗi msg xử lý nhanh nhưng khi tổng vào thì nó là lâu, cũng có thể dẫn đến fail heartbeat
+
 17. 🧭 Tình huống khi consumer chết hoặc thêm mới
+
+18. tình huống kafka chết? master luôn có heartbeat ping cho slave rằng nó đang sống, nếu die sẽ có slave khác lên làm master, trưgờn hợp này có thể có downtime, giải pháp là lưu vào db trước cái nào chết thì resend
 
 Kafka sẽ thực hiện rebalance:
 

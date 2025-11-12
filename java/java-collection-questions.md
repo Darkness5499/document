@@ -104,7 +104,9 @@
 ### ConcurrentHashMap, SynchronizedHashMap
 
 
-##
+## Situational Question
+1. You have a shared cache used by multiple threads, you need a hash map but data is getting corrupted. what could be the issue and how will you fix it
+ =>>> ConcurentHashmap
 
 
 
