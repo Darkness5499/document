@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5603056-9c19-497c-938a-b5f55d8f8be3" name="Changes" comment="update câu hỏi phỏng vấn database">
-      <change afterPath="$PROJECT_DIR$/docker/interview-question.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/config k8s/admin-user.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/step.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keycloak/guide.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/interview-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/interview-question.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OS/directory-structure.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elk-stack/interview-question.txt" beforeDir="false" afterPath="$PROJECT_DIR$/elk-stack/interview-question.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/spring-aop.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-aop.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/spring-circuit-breaker.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-circuit-breaker.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/spring-cloud-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-cloud-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/spring-core-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-core-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/spring-quarts.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-quarts.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/interview-question.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/guide.md" afterDir="false" />
-    </list>
+    <list default="true" id="e5603056-9c19-497c-938a-b5f55d8f8be3" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,7 +87,7 @@
       <workItem from="1759613918199" duration="32062000" />
       <workItem from="1760439608647" duration="15567000" />
       <workItem from="1760600899756" duration="1554000" />
-      <workItem from="1760846183540" duration="62741000" />
+      <workItem from="1760846183540" duration="62768000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -177,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760943429026</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update">
+      <option name="closed" value="true" />
+      <created>1761635688084</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1761635688084</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,8 +189,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update string question" />
     <MESSAGE value="update thread QA" />
-    <MESSAGE value="update" />
     <MESSAGE value="update câu hỏi phỏng vấn database" />
-    <option name="LAST_COMMIT_MESSAGE" value="update câu hỏi phỏng vấn database" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
