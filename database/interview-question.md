@@ -27,6 +27,8 @@
     - Hash index: Hash Table
     - Bitmap index
     - Composite index: Index trên nhiều cột
+    - Ngoài ra còn có partial index (đánh index 1 phần) và compound index (đánh index trên nhiều cộtin)
+    - index nhiều cột thì cột đầu tiên cũng được index, như cuốn sách nhiều trang được index, trong trang các dòng lại được index tiếp
 
 ```sql
 CREATE
@@ -59,6 +61,7 @@ INDEX_TYPE INDEX idx_emp_name ON employees (last_name);
    hoặc nhiều cluster để tránh sập...
 7. Khi thiết kế, tạo 1 bảng cần lưu ý những gì
 8. tính ACID của database
+   
 
    | Thuộc tính | Tên đầy đủ      | Ý nghĩa chính                                              |
       | ---------- | --------------- | ---------------------------------------------------------- |
@@ -66,20 +69,60 @@ INDEX_TYPE INDEX idx_emp_name ON employees (last_name);
    | **C**      | **Consistency** | Dữ liệu phải hợp lệ, đúng quy tắc trước và sau giao dịch   |
    | **I**      | **Isolation**   | Giao dịch độc lập, không bị ảnh hưởng bởi transaction khác |
    | **D**      | **Durability**  | Kết quả sau khi commit sẽ được lưu vĩnh viễn               |
+9. Tính BASE trong NOSQL
+- BASE là mô hình được dùng trong các hệ thống phân tán (NoSQL), ưu tiên tính sẵn sàng (Availability) và khả năng mở rộng (Scalability) hơn là tính nhất quán ngay lập tức.
+    | Thành phần                    | Nghĩa                                                                  |
+    | ----------------------------- | ---------------------------------------------------------------------- |
+    | **B – Basically Available**   | Hệ thống luôn sẵn sàng, even when nodes fail                           |
+    | **S – Soft State**            | Trạng thái dữ liệu có thể thay đổi theo thời gian (do replication trễ) |
+    | **E – Eventually Consistent** | Dữ liệu sẽ nhất quán sau một khoảng thời gian, không ngay lập tức      |
 
-9. sự khác biệt giữa where và in
+10. sự khác biệt giữa where và in
     - => không có quá nhiều sự khác biệt về hiệu năng
-10. Hiểu biết về primary key, constraints, sequence, trigger, sử dụng temporary table, bulk collection trong Oracle
-11. Hiểu gì về transaction, transaction
-12. Connection pool là gì, thông thường là bao nhiêu, tạo nhiều có được không, tính toán số connections hợp lý
+11. Hiểu biết về primary key, constraints, sequence, trigger, sử dụng temporary table, bulk collection trong Oracle
+12. OLTP và OLAP
+
+        ## 🟦 OLTP (Online Transaction Processing)
+        - Hệ thống xử lý giao dịch thời gian thực.
+        - Truy vấn ngắn, đơn giản.
+        - Tối ưu cho **ghi (write)**, độ trễ thấp.
+        - Dữ liệu thay đổi liên tục.
+        - Yêu cầu **ACID mạnh**.
+        - Ví dụ: Banking, e-commerce order, booking.
+
+        ## 🟩 OLAP (Online Analytical Processing)
+        - Hệ thống phân tích dữ liệu, báo cáo.
+        - Truy vấn dài, phức tạp, nhiều aggregate.
+        - Tối ưu cho **đọc (read)**, scan lớn.
+        - Dữ liệu dạng lịch sử, ít cập nhật.
+        - Không cần ACID mạnh.
+        - Ví dụ: Dashboard BI, KPI, phân tích dữ liệu.
+
+        ## 📊 Bảng so sánh
+
+        | Tiêu chí | OLTP | OLAP |
+        |---------|------|------|
+        | Mục đích | Xử lý giao dịch | Phân tích dữ liệu |
+        | Truy vấn | Ngắn, đơn giản | Dài, phức tạp |
+        | Tối ưu | Write | Read |
+        | Tính nhất quán | ACID mạnh | Eventual/loose consistency |
+        | Dữ liệu | Thay đổi liên tục | Lịch sử, tổng hợp |
+        | Dùng cho | App transactional | Data warehouse / BI |
+
+
+
+    
+13. Hiểu gì về transaction, transaction
+14. Connection pool là gì, thông thường là bao nhiêu, tạo nhiều có được không, tính toán số connections hợp lý
     - Ý tưởng cũng như thread pool, nếu mỗi lần cần thao tác với db cần tạo connect, xử lý rồi đóng rất lâu nên sinh ra
       pool để tái sử dụng
     - giống như nhân viên bán hàng trong siêu thị
-13. cụm (Data Replication, Sharding Strategies, CAP Theorem)
-14. Có các kiểu join nào? Nested loop, hash join, merge join...
+15. cụm (Data Replication, Sharding Strategies, CAP Theorem, )
+16. Có các kiểu join nào? Nested loop, hash join, merge join...
+    
 
     | Join Type           | Khi nào dùng                             | Ưu điểm                  | Nhược điểm                  |
-        | ------------------- | ---------------------------------------- | ------------------------ | --------------------------- |
+    | ------------------- | ---------------------------------------- | ------------------------ | --------------------------- |
     | **Nested Loop**     | Bảng nhỏ + có index                      | Nhanh, ít tốn CPU        | Chậm nếu bảng lớn           |
     | **Hash Join**       | Cả hai bảng lớn, không có index          | Hiệu quả, không cần sort | Tốn RAM, không dùng với `>` |
     | **Sort Merge Join** | Join không phải `=` hoặc dữ liệu đã sort | Linh hoạt                | Cần sort, tốn I/O           |
@@ -87,12 +130,12 @@ INDEX_TYPE INDEX idx_emp_name ON employees (last_name);
     - Explain plain để xem loại join
 
     | Id | Operation              | Name        |
-        |----|------------------------|-------------|
+    |----|------------------------|-------------|
     |  0 | SELECT STATEMENT       |             |
     |  1 |  NESTED LOOPS          |             |
     |  2 |   TABLE ACCESS BY INDEX| EMPLOYEES   |
     |  3 |   INDEX UNIQUE SCAN    | IDX_DEPT_ID |
-15. N+1 Problem là gì? cách giải quyết
+17. N+1 Problem là gì? cách giải quyết
     - Là vấn đề khi ứng dụng truy vấn dữ liệu con (child) cho mỗi bản ghi cha (parent) riêng lẻ → gây ra N+1 truy vấn
       thay vì chỉ 1 hoặc 2 truy vấn.
     ```java
@@ -156,3 +199,11 @@ INDEX_TYPE INDEX idx_emp_name ON employees (last_name);
     - là thêm các cột thông tin đã có ở các bảng khác để đỡ phải join
 6. Tạo sẵn bảng lưu kết quả câu truy vấn phức tạp
 7. có 100 triệu user cần tìm 1 user tồn tại thì làm thế nào?
+8. Làm sao để sử dụng Postgres/Mysql làm event pool/queue cho worker. Nghĩa là Worker sẽ lấy các bản ghi từ 1 table trong DB ra để xử lý, sau khi xử lý xong sẽ mark done ở DB. Làm sao để scale lên 100 worker mà các worker ko bị xử lý lặp nhau
+    | Cách                     | Collision-free | Performance | Recommended   |
+    | ------------------------ | -------------- | ----------- | ------------- |
+    | `FOR UPDATE SKIP LOCKED` | ✔              | ⭐⭐⭐⭐⭐    | **Best**      |
+    | UPDATE RETURNING         | ✔              | ⭐⭐⭐⭐      | Best          |
+    | Lease (locked_until)     | ✔              | ⭐⭐⭐        | For retries   |
+    | Advisory Locks           | ✔              | ⭐⭐⭐⭐      | Postgres only |
+    | Poll & status            | ❌             | ⭐⭐          | Avoid         |
