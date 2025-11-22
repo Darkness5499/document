@@ -207,3 +207,65 @@ INDEX_TYPE INDEX idx_emp_name ON employees (last_name);
     | Lease (locked_until)     | ✔              | ⭐⭐⭐        | For retries   |
     | Advisory Locks           | ✔              | ⭐⭐⭐⭐      | Postgres only |
     | Poll & status            | ❌             | ⭐⭐          | Avoid         |
+
+9. Giả sử có 2 câu lệnh select * và select column_name from user where name = "Điệp" thì câu 2 có nhanh hơn câu 1 không?
+    Thực sự là không nhanh hơn, bản chất vẫn phải select * để lọc ra dữ liệu, nếu trường name không được đánh index vẫn phải full table scan, còn về số trường select ít hơn thì có nhanh hơn 1 chút ở pharse đó
+10. Điều gì xảy ra khi 2 câu update cùng thực thi ?
+
+
+# 🔥 Những điểm tạo nên sự khác biệt giữa các Database Engine
+
+## 1. Storage Engine Architecture (Kiến trúc lưu trữ)
+- Quy định cách DB tổ chức dữ liệu trên disk.
+- Oracle: Block → Extent → Segment → Tablespace  
+- PostgreSQL: Page → Tuple (MVCC)  
+- SQL Server: Page → Extent → Allocation Maps  
+- MySQL/InnoDB: Page → Extent → TableSpace
+
+## 2. Concurrency Control (Kiểm soát đồng thời)
+- Cách xử lý đọc/ghi cùng lúc: MVCC, locking.
+- Oracle: MVCC bằng UNDO (rất mạnh)
+- PostgreSQL: MVCC theo phiên bản tuple
+- MySQL: MVCC trung bình (Undo Log)
+- SQL Server: Locking mặc định, snapshot cần bật
+
+## 3. Query Optimizer (Bộ tối ưu truy vấn)
+- Quyết định execution plan: index, join, scan.
+- Oracle: Optimizer mạnh nhất (CBO)
+- PostgreSQL: Rất mạnh, ngày càng tốt
+- SQL Server: tốt nhưng bị parameter sniffing
+- MySQL: yếu nhất khi join phức tạp
+
+## 4. Feature Set (Tính năng đặc thù)
+- Oracle: Partitioning, RAC, Flashback, Data Guard
+- PostgreSQL: JSONB, Extensions, FDW
+- SQL Server: Columnstore, AlwaysOn
+- MySQL/MariaDB: Replication dễ, InnoDB ổn định
+
+## 5. Index Types & Data Structures
+- Oracle: B-tree, Bitmap, Function-based, IOT
+- PostgreSQL: B-tree, Hash, GIN, GiST, BRIN
+- SQL Server: B-tree, Columnstore
+- MySQL: B-tree, Fulltext, Spatial
+
+## 6. Logging & Write-Ahead Logging (WAL/Redo)
+- Bảo đảm ACID khi crash.
+- Oracle: Redo log buffer → LGWR
+- PostgreSQL: WAL
+- SQL Server: Transaction Log
+- MySQL: Redo + Binlog (2 lớp)
+
+## 7. Crash Recovery Architecture
+- Quy trình rollback/rollforward.
+- Oracle: recover rất nhanh (undo + redo)
+- PostgreSQL: WAL replay
+- SQL Server: rollback/rollforward tự động
+- MySQL: doublewrite buffer, checkpoint
+
+## 8. Replication & High Availability
+- Oracle: Data Guard, RAC
+- PostgreSQL: Streaming Replication, Logical Replication
+- SQL Server: AlwaysOn Availability Groups
+- MySQL/MariaDB: Binlog Replication, Galera Cluster
+
+
