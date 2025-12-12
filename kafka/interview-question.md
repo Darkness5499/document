@@ -39,6 +39,11 @@ còn nếu là thời gian tối đa consumer có thể mất kết nối với 
 
 Kafka sẽ thực hiện rebalance:
 
+19. Kdraft có gì mới
+
+20. lấy message kafka lấy theo từng cái hay lấy theo batch
+21. 
+
 ## REFERENCE
 Kafka Interview questions and answers for 2024 for Experienced: https://www.youtube.com/watch?v=Q7tU0B1bnSE
 
