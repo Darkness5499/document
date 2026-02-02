@@ -1,6 +1,12 @@
 ### Java Garbage Collection
 
 It automatically removes the objects that are no longer in use
+new Objects are allocated on heap area.
+Heap area: Young generation and Old Generation
+Young generation: Eden space, S0 and S1 survivor.
+15 times in default object will be promoted to Old generation or sooner if young generation gets full.
+Marking -> Sweeping(quét/xoá) -> compacting(nén/ tái phân bổ minimize fragmenation)
+GC is triggered after certain amount of time.
 
 ##
 
