@@ -1,3 +1,14 @@
+### 1. Thành phần cốt lõi của Spring Security:
+* **SecurityFilterChain:** Chuỗi các bộ lọc bảo mật chặn request ở tầng Servlet.
+* **SecurityContextHolder:** Nơi lưu trữ thông tin người dùng đã đăng nhập thành công.
+* **Authentication:** Đối tượng chứa thông tin định danh và quyền hạn của User.
+* **AuthenticationManager:** Bộ điều hướng, quản lý luồng xác thực tổng thể.
+* **AuthenticationProvider:** Nơi trực tiếp xử lý logic xác thực (so khớp password, token).
+* **UserDetailsService:** Interface dùng để tìm kiếm thông tin User từ nguồn lưu trữ (DB).
+
+### 2. Luồng xác thực (Authentication Flow):
+Client Request -> SecurityFilterChain -> AuthenticationFilter -> Tạo Authentication (Unauthenticated) -> AuthenticationManager -> AuthenticationProvider -> Gọi UserDetailsService lấy UserDetails từ DB -> So khớp thông tin -> Trả về Authentication (Authenticated) -> Lưu vào SecurityContextHolder -> Đi tới Controller.
+
 # Spring Security Interview Questions
 
 ## Theoretical Questions

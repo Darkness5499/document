@@ -12,6 +12,8 @@ Mô tả luồng hoạt động:
     - các bước bắn message đều được lưu vào 1 bảng có cùng traceID để lưu trữ data trace log
     - Zipkins có trách nhiệm trace log thông quan traceid
     - chức năng tìm kiếm hợp đồng được đẩy lên elastic seach để tổng hợp thông tin giúp việc tìm kiếm nhanh hơn
+    - Dữ liệu giữa các luồng phải được lưu trừ trạng thái, roll back khi cần thiết bằng cách rollback mềm, tạo giao dịch đền bù
+    - data các luồng lưu vào bảng tramCDC ở saga service để chạy tiếp khi bất kì service nào đó sập, message chuưa được consume xong
 
 
 ### Dự án CRA
@@ -27,5 +29,10 @@ Mô tả luồng hoạt động:
 4. Dự án BPM
     1. đổi giao diện + api phân quyền cho user
     2. tích hợp một số API của CIC/CRA sang
+   BPM là dự án lớn, gồm nhiều service, mục đích chính là cho vay tiền, từ khâu đề xuất, đến thẩm định, và giải ngân, logic khá phức tạp
+   Phân quyền dựa trên RBAC: bao gồm role, right, user, permission, right_role...
+   Có sử dụng keycloak để đóng vai trò authen giữa các service
+
+    
 5. Dự án BPM Servey
 
