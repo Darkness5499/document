@@ -1,0 +1,69 @@
+## 🗺️ Lộ trình 4 Giai đoạn chinh phục AWS SAA
+
+### Giai đoạn 1: Xây móng Hệ thống & Mạng (Thời gian: 25% lộ trình)
+
+Giai đoạn này giúp bạn chuyển dịch tư duy từ mạng Local (K3d/Docker) lên mạng Cloud.
+
+-   **Trọng tâm tối thượng:** **VPC (Virtual Private Cloud)**. Bạn phải nắm lòng cách chia Subnet (Public vs Private), cách cấu hình Route Table, NAT Gateway (để các máy chủ trong mạng Private đi ra internet cập nhật code nhưng ngoài internet không thể hack vào).
+    
+-   **Compute:** Học về **EC2** (Các loại cấu hình máy chủ, cách chọn ổ cứng EBS thích hợp), **AMI** (Bản sao máy chủ) và **Security Group** (Tường lửa lớp máy chủ).
+    
+-   **Identity:** **IAM (Identity and Access Management)**. Học cách phân quyền Root account, IAM User, IAM Role và viết các đoạn JSON Policy để giới hạn quyền.
+    
+
+### Giai đoạn 2: Lưu trữ, Database & Kiến trúc Chịu tải (Thời gian: 40% lộ trình)
+
+Đây là phần chiếm số lượng câu hỏi lớn nhất trong đề thi SAA.
+
+-   **Storage:** Nuốt trọn **Amazon S3** (Các tính năng nâng cao như Lifecycle Policy để tự chuyển file cũ sang dạng lưu trữ rẻ tiền Glacier, S3 Versioning, S3 Security). Phân biệt S3 với **EFS** (Ổ cứng chia sẻ cho nhiều máy chủ) và **EBS**.
+    
+-   **Database:** Phân biệt khi nào dùng **RDS** (SQL, cách cấu hình Multi-AZ để dự phòng thảm họa, Read Replica để tăng tốc độ đọc) và khi nào dùng **DynamoDB** (NoSQL, tốc độ cao).
+    
+-   **High Availability (Sẵn sàng cao):** Học cách kết hợp **Application Load Balancer (ALB)** và **Auto Scaling Group (ASG)** để hệ thống tự động sinh thêm máy chủ khi CPU quá tải.
+    
+
+### Giai đoạn 3: Dịch vụ Tích hợp & Serverless (Thời gian: 20% lộ trình)
+
+Giai đoạn này cực kỳ quen thuộc với tư duy Microservices của bạn.
+
+-   **Messaging:** Học về **SQS** (Message Queue), **SNS** (Pub/Sub Notification), **Amazon Kinesis** (Xử lý luồng dữ liệu thời gian thực quy mô lớn).
+    
+-   **Serverless:** Học về **AWS Lambda**, **API Gateway** và **AWS Cognito** (Hệ thống Auth xác thực).
+    
+-   **Content Delivery:** **CloudFront** (Mạng lưới CDN toàn cầu để cache hình ảnh/giao diện tĩnh).
+    
+
+### Giai đoạn 4: Luyện đề & Thực chiến "Nội soi" (Thời gian: 15% lộ trình)
+
+> ⚠️ **Quy tắc chí mạng:** Tuyệt đối không học vẹt đề (Dump). Đề thi SAA đổi mới liên tục, bạn bắt buộc phải luyện đề để hiểu logic ra đề của AWS.
+
+-   Mua bộ đề **Tutorials Dojo (của Jon Bonso)** trên trang web của họ hoặc trên Udemy.
+    
+-   **Cách luyện:** Làm 1 đề thi thử trong 130 phút $\rightarrow$ Dành ra **3-4 tiếng tiếp theo để đọc phần giải thích**. Đọc kỹ tại sao đáp án mình chọn lại sai, đáp án của họ lại đúng. Ghi chú lại những dịch vụ lạ (như AWS Organizations, AWS KMS, AWS Systems Manager) vào một file riêng để ôn tập.
+    
+
+## 🛠️ Bộ công cụ & Tài liệu Khuyên dùng
+
+Để không bị bơi trong biển thông tin, bạn chỉ cần bám sát đúng 2 người thầy này trên internet:
+
+1.  **Để học hiểu bản chất sâu sắc (Vẽ sơ đồ mạng, luồng đi gói tin):** Học khóa SAA của **Adrian Cantrill (cantrill.io)**. Khóa này học hơi lâu nhưng kiến thức cực kỳ chắc, là bệ phóng hoàn hảo để sau này bạn lên thẳng SAP (Professional) mà không bị hổng kiến thức mạng.
+    
+2.  **Để tổng hợp kiến thức và mẹo đi thi:** Học khóa của **Stephane Maarek (Udemy)**. Anh này tóm tắt slide rất gọn, dễ nhớ để đi thi.
+    
+3.  **Để làm đề thử:** **Tutorials Dojo**.
+    
+
+## 🎯 Đích đến: 4 Trụ cột thiết kế của bài thi SAA
+
+Khi ngồi trong phòng thi, mọi câu hỏi tình huống của AWS đều xoay quanh việc bắt bạn phải cân bằng giữa 4 trụ cột này. Khi đọc đề, hãy tự hỏi đề bài đang ưu tiên trụ cột nào nhất:
+
+1.  **Design Secure Architectures (Thiết kế bảo mật - 30%):** Luôn chọn giải pháp phân quyền tối thiểu (Least Privilege), giấu máy chủ vào Private Subnet.
+    
+2.  **Design Resilient Architectures (Thiết kế chống chịu lỗi - 26%):** Luôn thiết kế hệ thống có Multi-AZ, có Load Balancer, nhỡ 1 Data Center của AWS bị sập thì app vẫn chạy mượt.
+    
+3.  **Design High-Performing Architectures (Thiết kế hiệu năng cao - 24%):** Dùng thêm bộ nhớ đệm (ElastiCache, CloudFront), chọn đúng loại ổ cứng SSD tốc độ cao.
+    
+4.  **Design Cost-Optimized Architectures (Thiết kế tối ưu chi phí - 20%):** Chọn loại máy chủ EC2 Spot Instance (giá rẻ hơn 90%), thiết kế Serverless (Lambda) nếu app ít người dùng.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTkyMTg5MDYxMV19
+-->
