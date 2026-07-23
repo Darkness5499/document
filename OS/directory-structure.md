@@ -21,3 +21,6 @@
 | `/Applications` *(macOS)* | App GUI (Visual Studio Code, Chrome, Docker Desktop, v.v.).            | Khi bạn cài app qua `.pkg` hoặc App Store.  |
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTczNjY0MDkyNl19
+-->
