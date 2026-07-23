@@ -1,3 +1,4 @@
+
 # Java Interview Questions
 
 ## 1. Các tính chất của OOP
@@ -160,14 +161,9 @@ context switch ≈ microseconds
 quá nhiều thread → context switching + memory blowup
 thread pool luôn phải tune theo workload
 
-## 13. Generics, Reflection, Annotation
-- Generics: kiểu tham số hóa.
-- Reflection: truy vấn/điều khiển class/method/field tại runtime.
-- Annotation: meta-data; có thể xử lý ở compile-time hoặc runtime (tuỳ loại).
 
 
-## 15. Garbage Collection
-- Cơ chế thu gom object không còn tham chiếu; có nhiều thuật toán/thu hoạch (generational GC, etc.).
+
 
 
 

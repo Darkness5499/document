@@ -1,3 +1,10 @@
+xử lý hàng triệu message 1 ngày
+xử lý hàng chục nghìn message trên giây
+làm sao để xứ lý nhanh nhất
+lỗi mất message, xử lý lại  message, message tăng đột biến
+Có những message gửi đi, gửi lại thì làm sao để đảm bảo mỗi request được xử lý đúng 1 lần?
+Thiết kế kafka như thế nào để phù hợp với số pod của service lúc đó?
+
 1 Các thành phần của kafka?
 
 2. Khi nào sử dụng kafka?

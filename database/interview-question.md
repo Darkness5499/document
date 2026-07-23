@@ -1,3 +1,4 @@
+
 # Database interview questions
 
 ### Pessimistic Locking Optimistic Locking
@@ -56,10 +57,35 @@ INDEX_TYPE INDEX idx_emp_name ON employees (last_name);
 
 5. Thiết kế cơ sở dữ liệu như thế nào, những lưu ý khi thiết kế cơ sở dữ liệu, có những chuẩn nào hoặc quy định nào
    không
+   ### Database Design Summary
+
+Database Design là nền móng của hệ thống, ảnh hưởng trực tiếp tới khả năng scale và hiệu năng.
+
+#### Quy trình thiết kế:
+1. Phân tích nghiệp vụ: xác định Entity, dữ liệu cần lưu.
+2. Thiết kế ERD: xác định bảng và quan hệ (1-1, 1-N, N-N).
+3. Normalization: loại bỏ dữ liệu dư thừa, tránh lỗi update.
+4. Physical Design: tối ưu Data Type, Index, Partition.
+
+#### Normalization:
+- 1NF: Mỗi cột chỉ chứa một giá trị nguyên tử.
+- 2NF: Field phải phụ thuộc đầy đủ vào toàn bộ khóa chính.
+- 3NF: Không có phụ thuộc bắc cầu giữa các field.
+
+#### Senior Perspective:
+- Chuẩn hóa giúp dữ liệu sạch nhưng quá mức sẽ nhiều JOIN → có thể Denormalization để tối ưu đọc.
+- Chọn Data Type nhỏ nhất có thể.
+- Primary Key nên tối ưu cho index (UUID Binary, UUIDv7, Snowflake).
+- Naming convention: snake_case, table dạng số nhiều.
+- Luôn có audit field: created_at, updated_at, status/is_deleted.
+- Foreign Key giúp đảm bảo dữ liệu nhưng hệ thống lớn có thể quản lý bằng Application để tăng throughput.
+
+=> Database tốt cần cân bằng giữa: Consistency - Performance - Scalability.
 
 6. RAC Real Application Cluster, Database trong thực tế được quản lý hoặc chia ra như thế nào, kiểu dạng chỉ đọc/ghi
    hoặc nhiều cluster để tránh sập...
 7. Khi thiết kế, tạo 1 bảng cần lưu ý những gì
+
 8. tính ACID của database
    
 
@@ -80,7 +106,76 @@ INDEX_TYPE INDEX idx_emp_name ON employees (last_name);
 10. sự khác biệt giữa where và in
     - => không có quá nhiều sự khác biệt về hiệu năng
 11. Hiểu biết về primary key, constraints, sequence, trigger, sử dụng temporary table, bulk collection trong Oracle
-12. OLTP và OLAP
+#### Oracle Database Concepts Summary
+
+##### 1. Primary Key (PK)
+- Là định danh duy nhất của mỗi record trong bảng.
+- Không được NULL và không được trùng.
+- Thường được dùng để tạo index tự động.
+- Giúp đảm bảo tính toàn vẹn dữ liệu.
+
+---
+
+##### 2. Constraints (Ràng buộc dữ liệu)
+Dùng để đảm bảo dữ liệu hợp lệ trong bảng.
+
+Các loại chính:
+- PRIMARY KEY: định danh duy nhất
+- FOREIGN KEY: ràng buộc quan hệ giữa bảng
+- NOT NULL: không được để trống
+- UNIQUE: giá trị không được trùng
+- CHECK: ràng buộc điều kiện logic
+
+---
+
+#####  3. Sequence
+- Object dùng để sinh số tăng tự động trong Oracle.
+- Thường dùng cho Primary Key.
+
+Ví dụ:
+- NEXTVAL: lấy giá trị tiếp theo
+- CURRVAL: lấy giá trị hiện tại
+
+---
+
+##### 4. Trigger
+- Là đoạn PL/SQL tự động chạy khi có sự kiện xảy ra:
+  - INSERT
+  - UPDATE
+  - DELETE
+- Dùng để:
+  - Audit log
+  - Validate dữ liệu
+  - Tự động cập nhật field
+
+---
+
+#####  5. Temporary Table
+- Bảng tạm thời dùng trong session hoặc transaction.
+- Dữ liệu không được lưu lâu dài.
+- Dùng để xử lý intermediate data (report, batch processing).
+- Có thể tự động xóa khi commit hoặc end session.
+
+---
+
+##### 6. Bulk Collection (PL/SQL)
+- Kỹ thuật xử lý dữ liệu theo batch thay vì từng dòng.
+- Giảm số lần context switch giữa SQL engine và PL/SQL engine.
+- Tăng hiệu năng đáng kể khi xử lý dữ liệu lớn.
+
+Ví dụ khái niệm:
+- FOR ALL (bulk insert/update/delete)
+- BULK COLLECT (fetch nhiều dòng cùng lúc)
+
+---
+
+##### Tổng kết
+- PK + Constraints: đảm bảo toàn vẹn dữ liệu
+- Sequence: sinh ID tự động
+- Trigger: tự động hóa logic DB
+- Temporary Table: xử lý dữ liệu tạm thời
+- Bulk Collection: tối ưu hiệu năng xử lý dữ liệu lớn trong Oracle
+13. OLTP và OLAP
 
         ## 🟦 OLTP (Online Transaction Processing)
         - Hệ thống xử lý giao dịch thời gian thực.
@@ -112,13 +207,110 @@ INDEX_TYPE INDEX idx_emp_name ON employees (last_name);
 
 
     
-13. Hiểu gì về transaction, transaction
-14. Connection pool là gì, thông thường là bao nhiêu, tạo nhiều có được không, tính toán số connections hợp lý
+14. Hiểu gì về transaction, transaction
+15. Connection pool là gì, thông thường là bao nhiêu, tạo nhiều có được không, tính toán số connections hợp lý
     - Ý tưởng cũng như thread pool, nếu mỗi lần cần thao tác với db cần tạo connect, xử lý rồi đóng rất lâu nên sinh ra
       pool để tái sử dụng
     - giống như nhân viên bán hàng trong siêu thị
-15. cụm (Data Replication, Sharding Strategies, CAP Theorem, )
-16. Có các kiểu join nào? Nested loop, hash join, merge join...
+    # Connection Pool trong Database (Spring Boot)
+
+##### 1. Connection Pool là gì?
+Connection Pool là một bộ nhớ đệm chứa sẵn các kết nối DB (JDBC Connection) được giữ trên RAM để tái sử dụng, thay vì tạo mới mỗi lần query.
+
+###### Cơ chế:
+- Không dùng pool:
+  - Mỗi request → tạo connection mới → TCP handshake → xác thực DB → chạy SQL → đóng connection
+  - Tốn thời gian (10–50ms) và gây quá tải DB nếu traffic lớn.
+
+- Có pool:
+  - App khởi động tạo sẵn một số connection
+  - Request đến → mượn connection → chạy SQL → trả lại pool (không đóng vật lý)
+  - Nhanh hơn rất nhiều (microseconds)
+
+👉 Trong Spring Boot, mặc định dùng **HikariCP** (nhanh và tối ưu nhất hiện nay).
+
+---
+
+##### 2. Số lượng Connection trong Spring Boot
+
+Không cố định, phụ thuộc cấu hình và tài nguyên hệ thống.
+
+###### Mặc định:
+- HikariCP: ~10 connections
+
+###### Cấu hình chính:
+
+```yaml
+spring:
+  datasource:
+    hikari:
+      minimum-idle: 10        # số connection luôn giữ sẵn
+      maximum-pool-size: 30   # số connection tối đa
+      connection-timeout: 30000 # thời gian chờ lấy connection (ms)
+   ```
+   ##### 3. Cơ chế hoạt động
+
+-   Bình thường: giữ `minimum-idle`
+-   Khi tải cao:
+    -   Pool mở rộng dần đến `maximum-pool-size`
+-   Khi tải giảm:
+    -   Thu hồi connection dư về lại mức tối thiểu
+
+----------
+
+##### 4. Lưu ý quan trọng (Senior level)
+
+❌ Không nên set max pool quá lớn (100–1000):
+
+-   Gây context switching cao
+-   DB bị quá tải
+
+----------
+
+##### 5. Công thức tham khảo tối ưu (PostgreSQL)
+
+```
+Max Connections = (CPU Core × 2) + Disk Spindle
+```
+
+Ví dụ:
+
+-   4 CPU cores + SSD
+    → khoảng 9–20 connections là hợp lý
+
+----------
+
+##### 6. Lưu ý hệ thống thực tế
+
+Tổng connection thực tế =
+
+```
+number_of_instances × maximum_pool_size
+```
+
+Ví dụ:
+
+-   5 instance Spring Boot
+-   mỗi instance max 30 connections
+
+→ DB phải chịu tối đa 150 connections
+
+----------
+
+##### Kết luận
+
+Connection Pool (HikariCP) giúp:
+
+-   Tái sử dụng connection
+-   Giảm latency
+-   Tránh quá tải DB
+
+Nhưng cần cấu hình hợp lý để cân bằng giữa:
+Performance ↔ DB load ↔ số instance
+
+
+16. cụm (Data Replication, Sharding Strategies, CAP Theorem, )
+17. Có các kiểu join nào? Nested loop, hash join, merge join...
     
 
     | Join Type           | Khi nào dùng                             | Ưu điểm                  | Nhược điểm                  |
@@ -135,7 +327,7 @@ INDEX_TYPE INDEX idx_emp_name ON employees (last_name);
     |  1 |  NESTED LOOPS          |             |
     |  2 |   TABLE ACCESS BY INDEX| EMPLOYEES   |
     |  3 |   INDEX UNIQUE SCAN    | IDX_DEPT_ID |
-17. N+1 Problem là gì? cách giải quyết
+18. N+1 Problem là gì? cách giải quyết
     - Là vấn đề khi ứng dụng truy vấn dữ liệu con (child) cho mỗi bản ghi cha (parent) riêng lẻ → gây ra N+1 truy vấn
       thay vì chỉ 1 hoặc 2 truy vấn.
     ```java

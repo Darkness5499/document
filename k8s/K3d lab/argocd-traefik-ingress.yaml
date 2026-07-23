@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-server-ingress
+  namespace: argocd
+  annotations:
+    # Chỉ thị bắt buộc: Bảo Traefik kết nối vào Backend bằng giao thức HTTPS
+    traefik.ingress.kubernetes.io/router.backend-protocol: "https"
+    # Ép Traefik bỏ qua việc kiểm tra chứng chỉ SSL nội bộ của ArgoCD
+    traefik.ingress.kubernetes.io/router.insecureSkipVerify: "true"
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: argocd.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443 # ◄── Bắt buộc gọi vào cổng bảo mật 443 của ArgoCD

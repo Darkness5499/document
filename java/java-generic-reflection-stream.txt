@@ -1,0 +1,4 @@
+## 13. Generics, Reflection, Annotation
+- Generics: kiểu tham số hóa.
+- Reflection: truy vấn/điều khiển class/method/field tại runtime.
+- Annotation: meta-data; có thể xử lý ở compile-time hoặc runtime (tuỳ loại).

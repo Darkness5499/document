@@ -1,6 +1,6 @@
 Tổng hợp:
 Về cơ chế vật lý gồm 2 loại: Liền kề trong ram và không liền kề, đại diện là ArrayList và LinkedList, Map cũng là không liền kề
-Về mặt cơ chế đọc ghi đồng thời: sẽ có 2 loại là Cho phép đồng bộ hoặc bất đồng bộ, ArrayList, LinkedList là đồng bộ, nếu đa luồng dùng CopyONWrite
+Về mặt cơ chế đọc ghi đồng thời: sẽ có 2 loại là Cho phép đồng bộ hoặc bất đồng bộ, ArrayList, LinkedList là đồng bộ, nếu đa luồng dùng CopyONWrite  
 Về mặt thứ tự: HashMap/HashSet -> LinkedHashMap/LinkHashSet (Để duy trì thứ tự) -> TreeMap/TreeSet (Sắp xếp tăng dần, tự )
 Vector và stack thì cũ
 Nhánh concurrent:
