@@ -15,7 +15,7 @@
 - muốn truy cập phải vượt qua các rule của getter và setter, áp dụng validation ở getter setter
 - tại sao phải dùng getter setter cho private trong khi getter setter chả có condition nào?
 - trả lời: sẽ ra sao nếu 1 ngày đẹp trời muốn thay đổi logic cho setter cho hàng trăm nơi đều set chẳng hạn amount > 0?
-- hoặc muốn log ở setter để xem ai set giá trị này?
+- hoặc muốn log ở setter để xem ai set giá trị này 
 - hoặc chỉ muốn cho đọc thì chỉ viết getter không viết setter
 - các framework khác như jackson hay jpa đều get set giá trị từ DB thông qua getter setter, không có thì value sẽ bị null
 

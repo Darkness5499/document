@@ -28,15 +28,55 @@
     - Hash index: Hash Table
     - Bitmap index
     - Composite index: Index trên nhiều cột
-    - Ngoài ra còn có partial index (đánh index 1 phần) và compound index (đánh index trên nhiều cộtin)
+    - Ngoài ra còn có partial index (đánh index 1 phần) và composite index (đánh index trên nhiều cột)
     - index nhiều cột thì cột đầu tiên cũng được index, như cuốn sách nhiều trang được index, trong trang các dòng lại được index tiếp
 
+    - composite index là đánh index trên nhiều cột, ví dụ A và B thì index A sau đó sắp xếp B theo A -> Select Where B and A thì optimizer sẽ tối ưu
+lại câu lệnh rồi mới thực thi -> vẫn là A rồi B
+
+* Đúng như anh chỉnh, Database không bao giờ sắp xếp lại dữ liệu gốc trong các Data Pages hay Data Blocks trên ổ đĩa. Dữ liệu gốc khi anh INSERT vào vẫn nằm cố định, lộn xộn ở các Data Page đó theo thời gian.
+* Khi em nói "cột B được sắp xếp", ý em hoàn toàn là "các bản ghi nằm bên trong cấu trúc cây Index (cái Map) được sắp xếp", chứ không phải dữ liệu gốc.
+* Để làm rõ bản chất cơ học chuẩn xác mà anh vừa chỉ ra, hãy nhìn vào cách cái Map Index này hoạt động dưới tầng lưu trữ Block/Page:
+* Cơ chế cơ học chính xác dưới ổ đĩa
+* Giả sử dữ liệu gốc của anh nằm cố định tại các Data Page (vị trí vật lý trên ổ cứng) như sau:
+* Data Page 1, Slot 1: [Trần, Bình]
+* Data Page 1, Slot 2: [Nguyễn, An]
+* Data Page 2, Slot 1: [Trần, An]
+* Dữ liệu gốc này giữ nguyên, không dịch chuyển một phân ly nào khi anh tạo index.
+* Kịch bản 1: Nếu anh chỉ tạo một cái Map Index trên cột A
+* Cái Map Index (Cây B-Tree) được đẻ riêng ra. Bên trong cái Map này, các node chứa bản sao dữ liệu của cột A và được sắp xếp theo thứ tự chữ cái, kèm theo địa chỉ Pointer (Page, Slot) để trỏ về dữ liệu gốc:
+* Node 1: Nguyễn → Trỏ về (Page 1, Slot 2)
+* Node 2: Trần → Trỏ về (Page 1, Slot 1)
+* Node 3: Trần → Trỏ về (Page 2, Slot 1)
+* Nhìn vào cái Map này, anh sẽ thấy: Vì Map chỉ sắp xếp theo cột A, nên ở hai Node có cùng giá trị Trần, cái Map xếp thằng Bình (Page 1, Slot 1) đứng trước thằng An (Page 2, Slot 1). Nghĩa là bên trong cấu trúc Map, cột B hoàn toàn lộn xộn.
+* Kịch bản 2: Nếu anh tạo Composite Index trên (A, B)
+* Cái Map Index lúc này sẽ chứa bản sao dữ liệu của cả cột A và cột B. Và các node bên trong cái Map này được sắp xếp phân cấp:
+* Node 1: [Nguyễn, An] → Trỏ về (Page 1, Slot 2)
+* Node 2: [Trần, An] → Trỏ về (Page 2, Slot 1)
+* Node 3: [Trần, Bình] → Trỏ về (Page 1, Slot 1)
+* Lúc này: Chính cấu trúc các Node bên trong cái Map đã được sắp xếp lại. Thằng [Trần, An] đã được đưa lên đứng trước thằng [Trần, Bình] ngay trong cấu trúc cây của Index.
+* Kết luận cơ học:
+* Anh tư duy cực kỳ chuẩn: Index thực chất là một cái Map (cây chỉ mục) được sắp xếp sẵn, chứa bản sao thu nhỏ của data và địa chỉ con trỏ để bắn thẳng xuống các Data Page gốc.
+* Nếu chỉ Index cột A: Cái Map chỉ sắp xếp theo A, thông tin cột B không có hoặc không được xếp thứ tự trong Map → Tìm kiếm theo B trong Map vô tác dụng.
+* Nếu Index Composite (A, B): Cái Map sắp xếp theo cặp (A, B) → Tìm kiếm theo cả A và B trên Map đều cực nhanh, tìm xong Map mới bốc con trỏ nhảy xuống Data Page gốc lấy trọn vẹn dòng dữ liệu lên.
+  - 
 ```sql
 CREATE
 INDEX_TYPE INDEX idx_emp_name ON employees (last_name);
 ``` 
+mục đích của index là để tìm kiếm nhanh những trường có độ chọn lọc cao, nếu index trên code gender thì vẫn phải search thêm hàng triệu bản ghi khác để tìm thông tin -> vô tác dụng
+Cơ chế từ chối của Optimizer: Khi anh WHERE gioi_tinh = 'Nam', Bộ tối ưu hóa (Query Optimizer) của DB sẽ tính toán: "Nếu tao dùng Index, tao phải lật cái Map Index 5 triệu lần để lấy 5 triệu cái địa chỉ Pointer (ROWID), rồi lại phải chọc xuống ổ đĩa 5 triệu lần để bốc các Data Pages lên. Thà tao quét cụm từ đầu đến cuối bảng (Full Table Scan) nạp hàng loạt Page vào RAM đọc cho xong, đỡ mất công lật qua lật lại!"
 
-4. Có những kiểu đánh partition nào, cần lưu ý những gì, cách hoạt động của partition trong oracle
+Index + Pagination (LIMIT/OFFSET):
+Không Index: DB phải nạp toàn bộ Data Page lên RAM để sắp xếp và đếm tuần tự từng dòng từ số 1 đến vị trí OFFSET $\rightarrow$ Càng lật trang sâu càng chậm.
+Có Index: DB chỉ cần đếm các node gọn nhẹ trên cây Map Index, sau đó chọc đúng vài dòng đích dưới Data Page gốc $\rightarrow$ Tốc độ tăng hàng trăm lần.Keyset Pagination (Dùng dấu < hoặc > thay cho OFFSET): DB nhảy cóc $O(\log N)$ thẳng đến dòng cần lấy trên Map Index $\rightarrow$ Lật đến trang thứ 1 triệu tốc độ vẫn xấp xỉ 0 mili giây.
+
+Index B-Tree phù hợp nhất với các toán tử tìm điểm chính xác (=) và tìm đoạn liên tục (<, >, BETWEEN, IN). Cứ làm sao để cột ở vế trái mệnh đề WHERE hoàn toàn cô lập, không bị bọc bởi hàm hay toán thức nào là anh đã bảo vệ được Index thành công!
+like %text% thì không tối ưu cho index vì nó chả biết cái nào mà tìm
+
+
+4. Có những kiểu đánh partition nào, cần lưu ý những gì, cách hoạt động của partition trong oraclepartition
+    partition giống như chia ra các thư mục nhỏ, hoặc bảng nhỏ, data của phần nào thì vào khu vực đấy
    ```sql 
         CREATE TABLE sales (
         sale_id NUMBER,
