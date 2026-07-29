@@ -1,18 +1,58 @@
-Tổng hợp:
-Về cơ chế vật lý gồm 2 loại: Liền kề trong ram và không liền kề, đại diện là ArrayList và LinkedList, Map cũng là không liền kề
-Về mặt cơ chế đọc ghi đồng thời: sẽ có 2 loại là Cho phép đồng bộ hoặc bất đồng bộ, ArrayList, LinkedList là đồng bộ, nếu đa luồng dùng CopyONWrite  
-Về mặt thứ tự: HashMap/HashSet -> LinkedHashMap/LinkHashSet (Để duy trì thứ tự) -> TreeMap/TreeSet (Sắp xếp tăng dần, tự )
-Vector và stack thì cũ
-Nhánh concurrent:
-    - ConcurrentHashMap: Bản chất: Thay vì khóa toàn bộ bảng dữ liệu như Hashtable, nó sử dụng cơ chế Lock Striping (chia nhỏ Map thành nhiều phân đoạn độc lập và áp dụng kỹ thuật CAS - Compare-And-Swap). Các Thread có thể ghi đồng thời vào các phân đoạn khác nhau mà không bị khóa luồng chéo nhau.
-    - CopyOnWriteArrayList: Bản chất: Đọc song song không khóa luồng. Khi ghi, nó nhân bản một mảng mới trên RAM để sửa rồi swap con trỏ.
-    - BlockingQueue (LinkedBlockingQueue, ArrayBlockingQueue):
-        Bản chất: Hàng đợi thông minh tự động bắt luồng Consumer "ngủ" chờ nếu hàng đợi trống, và bắt luồng Producer "ngủ" nếu hàng đợi đã đầy.
-        Ứng dụng: Trực tiếp cấu thành nên cơ chế hoạt động bên trong của Java Thread Pool (ThreadPoolExecutor).
 
--> Bài học đa luồng -> Chia nhỏ và xử lý ->> tương tự partition trong kafka, database, hoặc ổ
-Hash chính là array của các node, nếu số lượng trong linkedlist quá nhiều sau khi băm vd >8 thì sẽ chuyển thành dạng tree, tối ưu cho việc tìm kiếm
+### 1. Physical Memory Architecture (Cơ chế vật lý)
 
+-   There are two types of memory allocation: **Contiguous allocation** (stored sequentially in RAM) and **Non-contiguous allocation**.
+
+-   `ArrayList` represents contiguous memory, whereas `LinkedList` and `Map` (Hash buckets/nodes) represent non-contiguous memory.
+
+
+### 2. Concurrency Control (Cơ chế đọc ghi đồng thời)
+
+-   Collections are categorized into **Non-thread-safe** and **Thread-safe** (synchronized).
+
+-   `ArrayList` and `LinkedList` are non-thread-safe. For multithreaded environments, `CopyOnWriteArrayList` or concurrent alternatives should be used.
+
+
+### 3. Element Ordering (Về mặt thứ tự)
+
+-   `HashMap`/`HashSet` $\rightarrow$ No guaranteed order.
+
+-   `LinkedHashMap`/`LinkedHashSet` $\rightarrow$ Maintains **insertion order**.
+
+-   `TreeMap`/`TreeSet` $\rightarrow$ Maintains **natural sorting order** (or via a custom `Comparator`).
+
+-   _Note:_ `Vector` and `Stack` are legacy classes and are deprecated in modern architecture.
+
+
+### 4. The Concurrent Branch (Nhánh xử lý đa luồng)
+
+-   **`ConcurrentHashMap`**: Instead of locking the entire table like `Hashtable`, it achieves high concurrency using **CAS (Compare-And-Swap)** algorithms and **Node-level Locking** (on the first node of each bucket). This allows multiple threads to write concurrently to different buckets without cross-blocking.
+
+-   **`CopyOnWriteArrayList`**: Allows lock-free, parallel reads. For write operations, it clones the underlying array in RAM, applies the modifications, and then swaps the array reference.
+
+-   **`BlockingQueue` (`LinkedBlockingQueue`, `ArrayBlockingQueue`)**:
+
+    -   _Under the hood:_ A smart queue mechanism that automatically puts Consumer threads to sleep if the queue is empty, and puts Producer threads to sleep if the queue is full (**Thread Signaling/Backpressure**).
+
+    -   _Application:_ This directly constitutes the internal engine of the Java Thread Pool (`ThreadPoolExecutor`).
+
+
+### 5. Architectural Takeaways (Bài học kiến trúc)
+
+-   **Divide and Conquer:** The core philosophy of multithreading—breaking data down into smaller segments for isolated processing—is conceptually identical to **Partitions** in Apache Kafka, Database Sharding, or Disk Partitioning.
+
+-   **HashMap Internal Mechanics:** A `HashMap` is essentially an array of nodes (buckets). To optimize lookup time, if the number of elements linked within a single bucket exceeds the threshold of 8 (`TREEIFY_THRESHOLD`) **and** the total capacity is at least 64, Kafka/Java will convert the linked list into a **Red-Black Tree** to guarantee $O(\log n)$ performance.
+
+## 3. LinkedList vs ArrayList (cơ chế CRUD)
+- LinkedList: dùng node với con trỏ, các phần tử là node; chèn/xóa nhanh ở giữa/đầu/cuối.
+- ArrayList: mảng động; khi vượt quá capacity sẽ copy sang mảng mới (thường tăng ~1.5x); default capacity = 10; truy xuất ngẫu nhiên nhanh O(1).
+- đã hiểu bản chất thực sự chưa? khi nó copy sang mảng mới trên ram thì thế nào? nó có phải tìm 1 mảnh đất mới không? hay nối thêm vào đấy?
+- có thực sự hiểu việc cấp phát biến, list trong java hoạt động thế nào khi tương tác với ram không?
+
+## 4. Cấu trúc Map/HashMap/TreeMap/Set
+- HashMap/HashSet: triển khai bằng mảng các bucket (mỗi bucket là linked list hoặc tree khi collision nhiều).
+- Sau khi hash, các giá trị cùng bucket được so sánh bằng equals để tránh duplicate (với Set).
+- TreeMap: triển khai bằng cây (ví dụ Red-Black tree) — sắp xếp theo key.
 
 # Java Collections
 

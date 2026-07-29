@@ -1,82 +1,250 @@
 
 # Java Interview Questions
 
-## 1. Các tính chất của OOP
-- Đóng gói, Kế thừa, Đa hình, Trừu tượng
-- Đa hình: override (ghi đè), overload (nạp chồng)
-- Trừu tượng: Abstract class và Interface
-  - Abstract: cho phép phương thức có thân và phương thức abstract.
-  - Interface: quy định phương thức (lưu ý: Java 8+ có default/static methods).
-  - Ý nghĩa: Interface quy định input/output, tách rời việc implement.
+## 1. Four Principles of Object-Oriented Programming (OOP)
+
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Abstraction
+
+### Polymorphism
+
+Polymorphism allows the same interface or method call to exhibit different behaviors depending on the object's actual type.
+
+There are two forms in Java:
+
+- **Method Overloading (Compile-time Polymorphism):** Multiple methods have the same name but different parameter lists.
+- **Method Overriding (Runtime Polymorphism):** A subclass provides its own implementation of a method defined in its superclass or interface.
+
+### Abstraction
+
+Abstraction focuses on exposing **what an object does** while hiding **how it does it**.
+
+Java provides two primary ways to achieve abstraction:
+
+#### Abstract Class
+
+- Cannot be instantiated.
+- Can contain both **abstract methods** and **concrete methods**.
+- Can have fields, constructors, and method implementations.
+- Suitable when classes share common state and behavior.
+
+#### Interface
+
+- Defines a contract that implementing classes must follow.
+- Since Java 8, interfaces can also contain **default** and **static** methods.
+- Since Java 9, interfaces can also contain **private** methods for code reuse within the interface.
+- Supports multiple inheritance of type (`implements` multiple interfaces).
+
+#### Purpose of an Interface
+
+- Defines a contract (API) that implementing classes must follow.
+- Promotes loose coupling by separating the interface (what) from the implementation (how).
+- Allows different implementations to be used interchangeably through the same interface.
 
 
-- đóng gói: gói các thuộc tính và phương thức vào 1 đơn vị gọi là 1 class
-- mục đích: che giấu thông tin với các lớp bên ngoài, kiểm soát truy cập
-- muốn truy cập phải vượt qua các rule của getter và setter, áp dụng validation ở getter setter
-- tại sao phải dùng getter setter cho private trong khi getter setter chả có condition nào?
-- trả lời: sẽ ra sao nếu 1 ngày đẹp trời muốn thay đổi logic cho setter cho hàng trăm nơi đều set chẳng hạn amount > 0?
-- hoặc muốn log ở setter để xem ai set giá trị này 
-- hoặc chỉ muốn cho đọc thì chỉ viết getter không viết setter
-- các framework khác như jackson hay jpa đều get set giá trị từ DB thông qua getter setter, không có thì value sẽ bị null
+## Encapsulation
+
+- Encapsulation is the practice of bundling data (fields) and the methods that operate on that data into a single unit while restricting direct access to the object's internal state.
+- **Purpose:** Hide implementation details, protect object integrity, and control access to an object's state.
+- External code should interact with an object's state through its public API, which often includes getters and setters when appropriate. Validation and business rules can be enforced there.
+
+### Why use getters and setters if they don't contain any logic?
+
+Although getters and setters may initially appear to be simple field accessors, they provide flexibility for future changes without affecting existing code.
+
+For example:
+
+- If you later need to validate that `amount > 0`, you only need to update the setter instead of modifying every place that assigns the field.
+- You can add logging, auditing, or event publishing whenever the value changes.
+- You can make a property read-only by exposing only a getter.
+- Frameworks such as Jackson and JPA/Hibernate often use getters and setters for property access, although many also support direct field access depending on their configuration.
+
+------------------
+# Inheritance
+
+Inheritance allows a subclass to inherit the fields and methods of its superclass.
+
+## Benefits
+
+- **Code Reusability** – Reuse existing code instead of rewriting common functionality.
+- **Extensibility** – Extend or customize the behavior of a superclass without modifying it.
+- **Enables Runtime Polymorphism** – A subclass can override inherited methods, allowing different implementations to be invoked through the same superclass or interface reference.
+
+## Why does Java support only single inheritance?
+
+Java allows a class to extend only one superclass to avoid the **Diamond Problem**, where multiple parent classes may provide conflicting implementations of the same method.
+
+To support code reuse without this ambiguity:
+
+- A class can extend only one superclass.
+- A class can implement multiple interfaces.
+
+## Drawbacks of Inheritance
+
+- Creates **tight coupling** between a subclass and its superclass.
+- Changes in the superclass may unintentionally affect subclasses.
+- Deep inheritance hierarchies are harder to maintain.
+
+Therefore, object-oriented design generally follows the principle:
+
+> **Favor composition over inheritance.**
+
+Frameworks such as Spring encourage this approach through **Dependency Injection (DI)**, where objects receive their dependencies instead of inheriting behavior, resulting in lower coupling, greater flexibility, and easier testing.
+------------------------
+# Polymorphism
+
+Polymorphism means that an object or method can take multiple forms depending on the context.
+
+It allows the same method call to behave differently based on the actual type of the object at runtime.
+
+Java supports two types of polymorphism:
+
+- **Compile-time Polymorphism** → Method Overloading
+- **Runtime Polymorphism** → Method Overriding
+
+---
+
+## Method Overloading (Compile-time Polymorphism)
+
+Method overloading allows multiple methods in the same class to have the same name but different parameter lists.
+
+The compiler determines which method should be invoked based on:
+
+- Method name
+- Number of parameters
+- Parameter types
+- Parameter order
+
+The decision is made at compile time.
+
+Note:
+- Return type alone cannot be used to overload a method.
+
+---
+
+## Method Overriding (Runtime Polymorphism)
+
+Method overriding occurs when a subclass provides its own implementation of a method defined in its superclass or interface.
+
+Characteristics:
+
+- Requires inheritance (`extends`) or interface implementation (`implements`).
+- The method resolution happens at runtime.
+- JVM determines the actual object type and invokes the corresponding overridden method.
+
+Example concept:
+
+```java
+Animal animal = new Cat();
+animal.sound();
+```
+
+Although the reference type is `Animal`, the runtime object type is `Cat`, so the JVM calls `Cat.sound()`.
+
+---
+
+## Field Hiding vs Method Overriding
+
+Java supports method overriding but does not support field overriding.
+
+Fields are resolved based on the reference type at compile time.
+
+Therefore:
+
+- Methods → Runtime polymorphism
+- Fields → Compile-time binding
+
+---
+
+## Method Overriding Rules
+
+When overriding a method:
+
+- The child method cannot reduce the access level of the parent method.
+- The return type must be compatible (covariant return types are supported).
+- The method signature must be the same.
+
+Access modifier rule:
+
+- `public` → must remain `public`
+- `protected` → `protected` or `public`
+- `default` → `default`, `protected`, or `public`
+- `private` → cannot be overridden
+
+---
+
+## How JVM Resolves Overridden Methods
+
+At compile time, the compiler generates bytecode instructions for method invocation.
+
+At runtime:
+
+- JVM checks the actual object type stored in memory.
+- JVM uses internal method dispatch mechanisms (such as vtable/itable in HotSpot JVM) to locate the correct overridden method implementation.
+- If the subclass overrides the method, the JVM invokes the subclass implementation.
+
+This mechanism enables runtime polymorphism.
 
 
-Kế thừa: Cho phép lớp con kế thừa thuộc tính và phương thức của lớp cha
-->>>>
-Code Reusability
-Extensibility
-Polimorphism: Cho phép lớp con ghi đè lại phương thức override và phát triển theo cách của riêng nó
-chỉ cho phép đơn kế thừa vì đa kế thừa có thể bị chồng chéo khi lớp cha có cùng 1 hàm dẫn đến xung đột
-Tight Coupling -> kế thừa dẫn đến liên kết chặt chẽ giữa các lớp, lớp này phụ thuộc lớp khác? do đó IOC hay Spring inject ra đời, thay vì extend thì
-giờ tiêm 1 thuộc tính vào lớp để giảm sự phụ thuộc
+----------------
+# Abstraction
 
-Đa hình: Polymorphism -> một đối tượng hoặc phương thức có thể thực hiện nhiều hình thái khác nhau tuỳ thuộc vào ngữ cảnh thời điểm hiện tại
+Abstraction is the process of hiding unnecessary implementation details and exposing only essential behavior.
 
-Method overloading: nạp chồng -> xảy ra lúc biên dịch, trình biên dịch sẽ nhìn vào tham số truyển vào để xác định rõ hàm nào sẽ được gọi lúc java biên dịch mã code
-Method overriding: ghi đè phương thức -> xảy ra lúc chạy, kết hợp với kế thừa và inter
-Method overriding không ghi đè thuộc tính, ví dụ Animal animal = new Cat(), thuộc tính được xác định lúc biên dịch
-Hàm con extend thì phải có quyền bằng hoặc lớn hơn, ví dụ protected thì hàm con phải protected hoặc
-Override -> chỉ mục của phương thức sẽ trỏ đến địa chỉ của phương thức của lớp con
-Class sẽ tạo 1 bảng virtual table chứa danh sách là các địa chỉ trỏ đến phương thức mà class đó sở hữu -> con sẽ trỏ đến mothod của con
-"Tại thời điểm biên dịch, Compiler chỉ sinh ra lệnh invokevirtual kèm theo vị trí chỉ mục của hàm trong bảng phương thức ảo.
-Khi chạy (Runtime), JVM sẽ kiểm tra kiểu dữ liệu thực tế của đối tượng nằm trên bộ nhớ Heap, sau đó truy cập vào bảng vtable (Virtual Method Table) của chính Class đó tại vùng nhớ Metaspace.
-Nếu Class con đã ghi đè phương thức, con trỏ tại vị trí chỉ mục trong vtable sẽ trỏ đến địa chỉ vùng nhớ mới của Class con, giúp JVM kích hoạt chính xác logic đã được ghi đè."
+It simplifies complexity by focusing on:
 
-Trừu tượng ->> Đơn giản hoá sự phức tạp, tập trung vào What to do not How to do
-Interface: trừu tượng tuyệt đối, bộ chuẩn hành vi, một cái hợp đồng input output
-Abstract: Trừu tượng 1 phần
-Khi thiết kế hệ thống, em dùng Interface để tạo ra các điểm nối (Extension Points) giúp các Module giao tiếp với nhau mà không bị phụ thuộc vào code chi tiết của nhau (Decoupling). >
-Điều này giúp hệ thống cực kỳ dễ test (dễ Mocking) và có thể thay đổi, nâng cấp toàn bộ phần lõi công nghệ phía sau mà không làm ảnh hưởng đến các thành phần đang gọi bên ngoài."
+> **What to do, not How to do.**
+
+The goal of abstraction is to define clear responsibilities and reduce dependency on implementation details.
+
+---
+
+## Interface
+
+An interface defines a contract that specifies what a class can do without defining how it does it.
+
+Characteristics:
+
+- Defines a contract between the caller and the implementation.
+- Promotes loose coupling by separating abstraction from implementation.
+- Allows multiple implementations of the same behavior.
+- Since Java 8, interfaces can contain `default` and `static` methods.
+- Since Java 9, interfaces can contain `private` methods.
+
+---
+
+## Abstract Class
+
+An abstract class provides partial abstraction.
+
+Characteristics:
+
+- Can contain both abstract methods and concrete methods.
+- Can have fields, constructors, and shared implementations.
+- Useful when related classes share common state and behavior.
+
+---
+
+## Interface in System Design
+
+In system design, interfaces are often used to create **extension points** that allow modules to communicate through contracts instead of depending on concrete implementations.
+
+Benefits:
+
+- Reduces coupling between modules (**Decoupling**).
+- Makes the system easier to test by allowing dependencies to be mocked.
+- Allows replacing or upgrading internal implementations without affecting external components.
+- Supports flexible and maintainable architecture.
 
 
 
-## 2. Sự khác nhau giữa Interface và Abstract
-- Interface: quy ước lập trình, chỉ định API (input/output).
-- Abstract class: có thể chứa trạng thái và implement mặc định; bắt buộc subclass implement abstract methods.
+## 2. Interface vs Abstract
+An interface defines a contract and focuses on what a class can do, while an abstract class provides a common base with shared state and implementation. 
+I use interfaces for loose coupling and flexibility, and abstract classes when related classes share common behavior
 
-## 3. LinkedList vs ArrayList (cơ chế CRUD)
-- LinkedList: dùng node với con trỏ, các phần tử là node; chèn/xóa nhanh ở giữa/đầu/cuối.
-- ArrayList: mảng động; khi vượt quá capacity sẽ copy sang mảng mới (thường tăng ~1.5x); default capacity = 10; truy xuất ngẫu nhiên nhanh O(1).
-- đã hiểu bản chất thực sự chưa? khi nó copy sang mảng mới trên ram thì thế nào? nó có phải tìm 1 mảnh đất mới không? hay nối thêm vào đấy?
-- có thực sự hiểu việc cấp phát biến, list trong java hoạt động thế nào khi tương tác với ram không?
 
-## 4. Cấu trúc Map/HashMap/TreeMap/Set
-- HashMap/HashSet: triển khai bằng mảng các bucket (mỗi bucket là linked list hoặc tree khi collision nhiều).
-- Sau khi hash, các giá trị cùng bucket được so sánh bằng equals để tránh duplicate (với Set).
-- TreeMap: triển khai bằng cây (ví dụ Red-Black tree) — sắp xếp theo key.
-
-## 5. Luồng (Threads) và concurrency
-Đa nhiệm: Multitasking chạy nhiều nhiệm vụ, quay vòng các task để có cảm giác liên tục song
-ĐA xử lý: tầm phần cứng, Multiprocessing, Các core các thread chạy song song thựcsong
-Đa luồng: thread là đơn vị nhỏ nhất CPU quản lý, Mỗi process như 1 ứng  gồm nhiều thread con, chạy các thread đấy song song
-
-Các ứng dụng sẽ được HĐH cấp phát một bộ nhớ RAM riêng biệt để không xung đột với nhau
-Trong java, được tách ra làm 2 vùng là stack và heap, stack sẽ lưu các biến local của thread để không va chạm với nhau, như các API khác nhau sẽ nằm ở stack khác nhau
-
-biến static sẽ nằm ở metaspace, trỏ đến object trong
-
-- Thread, Runnable -> ExecutorService -> Future/Callable -> CompletableFuture (Java 8+)
-- ThreadPool: pool quản lý số lượng thread (maxPoolSize...)
-- Sử dụng CompletableFuture cho xử lý bất đồng bộ.
 
 ## 6. Volatile, Synchronized và static
 - synchronized: cho phép 1 thread truy cập khối code cùng lúc (đồng bộ hóa). các object nằm trên ram vùng nhớ heap đều có 1 cái khoá, thằng nào có khoá thì chạy, các bước: tranh chấp -> chiếm hữu owner -> chặn luồng block -> giải phóng
@@ -92,6 +260,41 @@ biến static sẽ nằm ở metaspace, trỏ đến object trong
 - dùng làm cờ hiệu hệ thống bật tắt, các luồng cùng thấy 1 giá
 
 - static: thuộc về class, không phải instance. nằm ở metaspace chứ không phải heap như object, Hãy tưởng tượng object là 1 bảng trong đó mỗi dòng trỏ đến các phương thức và biến, thì static sẽ được tạo chung và tất cả quyển sách đều nhìn được biến , được tạo khi JVM load class đó vào bộ nhớ, trước cả khi hàm main chạy, vì là static nên GC sẽ không dọn, cẩn trọng khi dùng, cẩn trọng trong thread-safe vì có thể sai
+
+
+### 1. Synchronized
+
+-   **Concept:** Ensures mutual exclusion by allowing only one thread to access a code block at a time using an Intrinsic/Monitor Lock attached to every object.
+
+-   **Workflow:** Contention $\rightarrow$ Ownership $\rightarrow$ Thread Blocked (if locked) $\rightarrow$ Release.
+
+-   **Best Practice:** Lock only critical code blocks, not entire methods, to avoid performance bottlenecks.
+
+-   **Risk:** Can lead to **Deadlock**.
+
+-   **Solutions:** Use `ReentrantLock` for time-bound lock attempts (`tryLock`), or use **Atomic Variables** which leverage hardware-level, non-blocking **CAS (Compare-And-Swap)** for maximum speed.
+
+
+### 2. Volatile
+
+-   **Concept:** Guarantees **Visibility** and **Ordering** (prevents instruction reordering) across threads.
+
+-   **Mechanism:** Forces hardware cache coherency (flushing store buffers/invalidating CPU caches) so threads always see the latest value, avoiding stale data. It does not always mean a slow, direct physical RAM read.
+
+-   **Limitation:** Does **not** guarantee atomicity. Concurrent modifications (like `count++`) can still cause race conditions and incorrect results.
+
+-   **Best Use Case:** Used as state flags (e.g., `volatile boolean isRunning`) where multiple threads need to see a single status change instantly.
+
+
+### 3. Static
+
+-   **Concept:** Belongs to the Class itself, not to individual instances.
+
+-   **Memory:** Stored in **Metaspace**, unlike objects which reside in the Heap.
+
+-   **Lifecycle:** Initialized when the JVM loads and initializes the class. Since it persists for the application's entire lifecycle, it is not garbage collected normally.
+
+-   **Risks:** High risk of **Memory Leaks** if global collections are misused, and requires strict care for **Thread-Safety** because the exact same memory address is shared by all threads.
 
 ## 7. SOLID
 - (Liệt kê topic để ôn: Single Responsibility, Open/Closed, Liskov, Interface Segregation, Dependency Inversion)
@@ -110,44 +313,23 @@ biến static sẽ nằm ở metaspace, trỏ đến object trong
 | **D - DIP**: Code tạo dependency bằng `new` bên trong class khiến khó test.                                                                                                                    | Dùng Dependency Injection (Spring `@Autowired`, constructor injection). Inject dependency từ bên ngoài.                                                                                  |
 
 
-## 8. String pool, StringBuffer
-- String pool lưu interned strings để tiết kiệm bộ nhớ.
-- StringBuffer synchronized; StringBuilder không synchronized (khuyên dùng khi không đa luồng).
-
-## 9. Stack và Heap
-- Stack: lưu biến cục bộ, frame hàm; Heap: lưu object, garbage-collected.
-
-## 10. Streams
-- Stream cung cấp API xử lý tập hợp theo phong cách functional (map/filter/reduce).
-- Hiệu năng tùy tình huống; parallelStream có thể đem lại lợi ích nhưng cần cân nhắc overhead.
-
-5 câu nhớ nhanh khi đi phỏng vấn Senior:
-Stream không chứa dữ liệu, nó chỉ mô tả cách xử lý dữ liệu.
-Intermediate operation lazy, chỉ chạy khi có terminal operation.
-Stream xử lý theo pipeline, mỗi element đi qua toàn bộ pipeline.
-Stream không làm code chạy nhanh hơn mặc định, đôi khi còn chậm hơn loop.
-Parallel stream chỉ dùng khi workload lớn + độc lập + CPU bound, không dùng tùy tiện.
-
-Với góc nhìn Senior: đừng dùng Stream để mutate biến bên ngoài. Stream nên được dùng theo kiểu:
-
-- Input → transform → output
-- thay vì:
-- Input → thay đổi state bên ngoài.
 
 
-- Nếu e khai báo 1 biến là int count = 0
-Thì dùng stream.foreach count++ thì giá trị count có tăng lên không
---> không tăng, lỗi vì không cho phép thay đổi reference bên trong
-6. Tóm lại cực ngắn
-✔ for: bạn muốn đổi reference hay value đều được
-❌ stream/lambda: không cho đổi local variable reference
-✔ lý do: lambda có cơ chế closure + có thể async/parallel
-✔ stream muốn state → phải dùng collector hoặc mutable object được share có kiểm soát
+## 9. Stack and Heap
+### Stack
+- Stores method call frames, local variables, and execution information.
+- Each thread has its own Stack.
+- Local variables are stored in the Stack, while object references point to objects in the Heap.
+### Heap
+- Stores objects and instance data.
+- Shared between threads.
+- Managed by the Garbage Collector (GC), which automatically removes unreachable objects.
 
-## 11. equals() và hashCode(), cách Set hoạt động
-- equals(): so sánh nội dung object.
-- hashCode(): trả về mã băm; hợp đồng equals/hashCode quyết định behavior trong Hash-based collections.
-- Set sử dụng hashCode để định bucket, equals để kiểm tra trùng lặp.
+## 11. equals() and hashCode(), How Set Works
+
+- **equals():** Compares the logical equality of two objects based on their content.
+- **hashCode():** Returns an integer hash value representing the object. The `equals()` and `hashCode()` contract determines the behavior of hash-based collections.
+- **Set:** Uses `hashCode()` to locate the appropriate bucket and uses `equals()` to check for duplicate objects.
 
 ## 12. Bao nhiêu thread là đủ?
 - Không phải nhiều thread luôn nhanh hơn; số thread tối ưu phụ thuộc CPU-bound vs I/O-bound và tài nguyên hệ thống.

@@ -6,12 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e5603056-9c19-497c-938a-b5f55d8f8be3" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/các việc đã làm/các việc đã làm.md" beforeDir="false" afterPath="$PROJECT_DIR$/các việc đã làm/các việc đã làm.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/interview-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/database/interview-question.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Spring-data-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/Spring-data-question.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/interview-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/interview-question.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/java-collection-questions.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/java-collection-questions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/java-stream-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/java-stream-question.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/java-string-handling-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/java-string-handling-question.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/java-thread-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/java-thread-question.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/spring-core-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-core-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka/interview-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka/interview-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-knowledge/question.md" beforeDir="false" afterPath="$PROJECT_DIR$/security-knowledge/question.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/spring-core-question1.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-core-question1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="579" />
+    <option name="cachedIndexableFilesCount" value="594" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -169,7 +171,8 @@
       <workItem from="1760600899756" duration="1554000" />
       <workItem from="1760846183540" duration="62768000" />
       <workItem from="1784848125798" duration="86000" />
-      <workItem from="1784848268783" duration="27928000" />
+      <workItem from="1784848268783" duration="29279000" />
+      <workItem from="1785219818236" duration="9401000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />

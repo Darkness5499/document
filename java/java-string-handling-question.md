@@ -1,6 +1,9 @@
 Về mặt vật lý, String Pool không phải là một vùng nhớ độc lập hay kỳ bí nào cả, nó chỉ là một vùng không gian được quy hoạch riêng nằm ngay bên trong bộ nhớ Heap. nhưng được quản lý riêng bởi pool, nếu Heap là đô thị thì pool là 1 khu dân cư nhỏ có ban quản lý riêng, hơi khác tí, thằng nào tạo New thì được lưu ở heap.
 Hỏi xem có kí tự này trong pool chưa bằng bảng băm, nếu chưa có thì cấp phát có rồi thì trả lại địa chỉ luôn
 
+## 8. String pool, StringBuffer
+- String pool lưu interned strings để tiết kiệm bộ nhớ.
+- StringBuffer synchronized; StringBuilder không synchronized (khuyên dùng khi không đa luồng).
 
 ### 1. What is the difference between String, StringBuffer, and StringBuilder in Java?
 - String: Immutable, once created, it cannot be changed, Stored in string pool to save memory, concat, replace... => create a new string

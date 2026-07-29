@@ -1,3 +1,17 @@
+## 5. Luồng (Threads) và concurrency
+Đa nhiệm: Multitasking chạy nhiều nhiệm vụ, quay vòng các task để có cảm giác liên tục song
+ĐA xử lý: tầm phần cứng, Multiprocessing, Các core các thread chạy song song thựcsong
+Đa luồng: thread là đơn vị nhỏ nhất CPU quản lý, Mỗi process như 1 ứng  gồm nhiều thread con, chạy các thread đấy song song
+
+Các ứng dụng sẽ được HĐH cấp phát một bộ nhớ RAM riêng biệt để không xung đột với nhau
+Trong java, được tách ra làm 2 vùng là stack và heap, stack sẽ lưu các biến local của thread để không va chạm với nhau, như các API khác nhau sẽ nằm ở stack khác nhau
+
+biến static sẽ nằm ở metaspace, trỏ đến object trong
+
+- Thread, Runnable -> ExecutorService -> Future/Callable -> CompletableFuture (Java 8+)
+- ThreadPool: pool quản lý số lượng thread (maxPoolSize...)
+- Sử dụng CompletableFuture cho xử lý bất đồng bộ.
+
 # Java Concurrency Interview Q&A
 # Java Virtual Thread 21
 

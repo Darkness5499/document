@@ -1,3 +1,30 @@
+## Spring JPA
+1. Spring data jpa, hibernate,thành phần cấu trúc, cơ chế hoạt động
+2. Có 2 Service A và B đều có annotation @Transaction, service A call Service B. giả sử B không lỗi mà A lỗi thì B có được rollback không? giải thích
+3. propagation: Quy định xem phương thức hiện tại sẽ xử lý thế nào nếu đã có hoặc chưa có một Transaction khác đang chạy trước đó.
+4. isolation (Cấp độ cô lập): Quy định mức độ cô lập dữ liệu giữa các Transaction chạy song song nhằm chống lại các hiện tượng đọc lỗi (Dirty Read, Non-Repeatable Read, Phantom Read)
+### Transaction Propagation
+
+- `REQUIRED`: Tham gia transaction hiện tại, nếu chưa có thì tạo mới.
+- `REQUIRES_NEW`: Luôn tạo transaction mới, tạm dừng transaction hiện tại.
+- `SUPPORTS`: Có transaction thì tham gia, không có thì chạy bình thường.
+- `NOT_SUPPORTED`: Luôn chạy ngoài transaction, tạm dừng transaction hiện tại.
+- `MANDATORY`: Bắt buộc phải có transaction, nếu không sẽ ném exception.
+- `NEVER`: Bắt buộc không có transaction, nếu có sẽ ném exception.
+- `NESTED`: Tạo nested transaction (Savepoint), có thể rollback một phần nếu DB hỗ trợ.
+
+---
+
+### Transaction Isolation
+
+- `DEFAULT`: Sử dụng mức Isolation mặc định của Database.
+- `READ_UNCOMMITTED`: Cho phép Dirty Read.
+- `READ_COMMITTED`: Ngăn Dirty Read.
+- `REPEATABLE_READ`: Ngăn Dirty Read và Non-repeatable Read.
+- `SERIALIZABLE`: Ngăn Dirty Read, Non-repeatable Read và Phantom Read; an toàn nhất nhưng hiệu năng thấp nhất.
+
+5. Các cách thao tác với database: JPA/JDBCTemplate/...
+
 
 ## 💬 Tình huống 1: Bẫy rò rỉ kết nối (Connection Pool Starvation) do `@Transactional` kết hợp `@Async` hoặc gọi API ngoài
 

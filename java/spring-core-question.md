@@ -12,14 +12,6 @@
  - Constructor Injection (Tiêm qua Hàm khởi tạo)
     Đây là cách thiết kế ép buộc (Mandatory Dependencies). Nếu một Bean không thể hoạt động nếu thiếu phụ thuộc đó, hãy dùng Constructor.
 
-### Spring JPA
-1. Spring data jpa, hibernate,thành phần cấu trúc, cơ chế hoạt động
-2. Có 2 Service A và B đều có annotation @Transaction, service A call Service B. giả sử B không lỗi mà A lỗi thì B có được rollback không? giải thích
-3. propagation: Quy định xem phương thức hiện tại sẽ xử lý thế nào nếu đã có hoặc chưa có một Transaction khác đang chạy trước đó.
-4. isolation (Cấp độ cô lập): Quy định mức độ cô lập dữ liệu giữa các Transaction chạy song song nhằm chống lại các hiện tượng đọc lỗi (Dirty Read, Non-Repeatable Read, Phantom Read) 
-5. Các cách thao tác với database: JPA/JDBCTemplate/...
-6.
-
 
 
 ### Spring Security
