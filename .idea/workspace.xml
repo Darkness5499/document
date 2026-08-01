@@ -5,15 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5603056-9c19-497c-938a-b5f55d8f8be3" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/database/noSQL/1.core-knowledge-mongodb.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain-specific-solutions/banking-money.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/english/NOTE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/english/các website luyện tiếng anh.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/english/english in an interview.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/english/english-topic-at-work.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java/spring-solution.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka/hướng dẫn kết nối.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kĩ năng tech lead/các kĩ năng cần có.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis/1.redis-core-knowledge.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis/2.solution.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis/references.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/Spring-data-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/Spring-data-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/interview-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/interview-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/java-collection-questions.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/java-collection-questions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/java-stream-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/java-stream-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/java-string-handling-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/java-string-handling-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/java-thread-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/java-thread-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/spring-core-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-core-question.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/spring-core-question1.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/spring-core-question1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/Tài liệu tham khảo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/database/Tài liệu tham khảo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redis/interview-question.md" beforeDir="false" afterPath="$PROJECT_DIR$/redis/interview-question.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,23 +55,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0015290665928207" />
-      <entry key="MS500" value="1.4006772758686503" />
-      <entry key="S2" value="3.478852812927077" />
-      <entry key="S5" value="6.933046958711894" />
-      <entry key="S10" value="10.3339853700823" />
-      <entry key="S30" value="14.732278855788525" />
-      <entry key="S60" value="16.521102395242245" />
-      <entry key="M2" value="18.509586778305774" />
-      <entry key="M5" value="24.34168604623828" />
-      <entry key="M10" value="36.42804717292966" />
-      <entry key="M15" value="51.69044610745984" />
-      <entry key="M30" value="100.34648562642631" />
-      <entry key="H1" value="173.35116161360352" />
-      <entry key="H2" value="245.13284643086945" />
-      <entry key="H4" value="297.26001364084743" />
-      <entry key="D1" value="405.6821293000123" />
-      <entry key="W1" value="560.5388962800271" />
+      <entry key="MS100" value="1.3584148082276868" />
+      <entry key="MS500" value="3.273201723725889" />
+      <entry key="S2" value="7.38734063142384" />
+      <entry key="S5" value="12.961619018420574" />
+      <entry key="S10" value="18.43407272468409" />
+      <entry key="S30" value="26.32550721040963" />
+      <entry key="S60" value="33.23069780728508" />
+      <entry key="M2" value="45.64695673649243" />
+      <entry key="M5" value="71.30553879908143" />
+      <entry key="M10" value="92.57844989899357" />
+      <entry key="M15" value="103.128541241686" />
+      <entry key="M30" value="116.32232747430879" />
+      <entry key="H1" value="124.16273124004086" />
+      <entry key="H2" value="128.45433076314856" />
+      <entry key="H4" value="131.49753518464985" />
+      <entry key="D1" value="280.1802079814946" />
+      <entry key="W1" value="678.5277017247396" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -87,23 +93,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9540946449787864" />
-      <entry key="MS500" value="1.3871160329797667" />
-      <entry key="S2" value="3.469922549809493" />
-      <entry key="S5" value="6.925678333957384" />
-      <entry key="S10" value="10.328464540498175" />
-      <entry key="S30" value="14.729633443273126" />
-      <entry key="S60" value="16.51958163691802" />
-      <entry key="M2" value="18.508681245074147" />
-      <entry key="M5" value="24.3411302663397" />
-      <entry key="M10" value="36.427557629997025" />
-      <entry key="M15" value="51.689948137761554" />
-      <entry key="M30" value="100.34599322127252" />
-      <entry key="H1" value="173.35075282998096" />
-      <entry key="H2" value="245.1325666714233" />
-      <entry key="H4" value="297.25984710600324" />
-      <entry key="D1" value="405.68209260505347" />
-      <entry key="W1" value="560.5388891942183" />
+      <entry key="MS100" value="1.2398008573560069" />
+      <entry key="MS500" value="3.2328459623428683" />
+      <entry key="S2" value="7.366868324891971" />
+      <entry key="S5" value="12.946518712952136" />
+      <entry key="S10" value="18.422652414940302" />
+      <entry key="S30" value="26.319785705044335" />
+      <entry key="S60" value="33.22714686999966" />
+      <entry key="M2" value="45.64463030908587" />
+      <entry key="M5" value="71.30416001459294" />
+      <entry key="M10" value="92.5775726535124" />
+      <entry key="M15" value="103.1278939641421" />
+      <entry key="M30" value="116.32196467845297" />
+      <entry key="H1" value="124.16253818480425" />
+      <entry key="H2" value="128.45423104074192" />
+      <entry key="H4" value="131.497484095858" />
+      <entry key="D1" value="280.1801863703613" />
+      <entry key="W1" value="678.5276936551086" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -172,7 +178,7 @@
       <workItem from="1760846183540" duration="62768000" />
       <workItem from="1784848125798" duration="86000" />
       <workItem from="1784848268783" duration="29279000" />
-      <workItem from="1785219818236" duration="9401000" />
+      <workItem from="1785219818236" duration="29138000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />

@@ -1,0 +1,16 @@
+Thực ra hỏi các kiến thức về tree, graph ... thì hiển nhiên các bạn SE sẽ ít tìm hiểu. Có thể bạn phỏng vấn muốn xem bạn chịu khó tới đâu thôi, chứ biển học vô bờ. Bạn có thể hỏi ngược các kiến thức khác với người phỏng vấn, về java ấy, chắc gì họ đã trả lời ok.
+Quan trọng giờ không phải ngồi khư khư mấy cái đó, mà biết cách search / prompt để tìm hiểu không thôi.
+Anw, ngắn gọn về:
++ Cây LSM (Log-Structured Merge Tree) dùng cho việc tối ưu ghi dữ liệu (ghi vào mem trước, hợp nhất trên mem trước khi ghi vào đĩa vì IOWrite sẽ rất chậm do IO hardisk lởm). MÌnh không biết cái buffer cache của Oracle có dùng LSM Tree không nhưng có vẻ tương tự (trong Postgresql thì có cái WAL - write ahead log).
++ Cây AVL (Adelson-Velsky and Landis - cây nhị phân tự cân bằng). Với việc tổ chức theo AVL thì việc search, insert hay xóa sẽ có time-complex = O(log n). Tuy nhiên, trong Oracle mình nhớ là indexing họ dùng BTree vì BTree nó không cần tự cân bằng sau mỗi lần add node mà dùng batch-balancing.
+
+
+Mình đoán bạn phỏng vấn chuyên về Oracle (có thể sếp Huy Wecommit chăng ^^).
+Giờ hỏi ngược về mono / flux, về cách JVM quản lý và cấp pháp mem, parallel programming, virtual thread, fibre / green process ... cái đấy chắc gì ông ý nắm vững --> cái đấy mới nên hỏi về java dev (mà thực ra ông nào code thì may ra mới gọi là biết ngóc ngách, chứ đọc báo ... thì cũng chỉ biết author chém thế thôi, thực tế shortcut đầy ra đấy).
+Thực ra với SE mình nghĩ, sẽ verify các yêu cầu sau:
++ Khả năng hiểu biết về ngôn ngữ và fw dùng (cùng hệ sinh thái của nó)
++ Biết design module sao cho backward và forward compats
++ Viết code clean và secure (biết sử dụng exception, log thì phải có context data, dùng 1 vài design pattern, biết chia tách function)
+Và biết refactor code mà copilot gen ra sao cho clean và secure.
+
+
