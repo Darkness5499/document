@@ -1,7 +1,7 @@
 
 # Database interview questions
 
-### Pessimistic Locking Optimistic Locking
+### Pessimistic Locking(Bi quan, ít có tranh chấp) Optimistic Locking(lạc quan, lúc nào cũng có tranh chấp)
 
 1. Thứ tự thực hiện câu lệnh truy vấn SQL?
     - FROM -> JOIN -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY -> LIMIT/OFFSET/ROWNUM (ORACLE)
@@ -143,7 +143,7 @@ Database Design là nền móng của hệ thống, ảnh hưởng trực tiếp
     | **S – Soft State**            | Trạng thái dữ liệu có thể thay đổi theo thời gian (do replication trễ) |
     | **E – Eventually Consistent** | Dữ liệu sẽ nhất quán sau một khoảng thời gian, không ngay lập tức      |
 
-10. sự khác biệt giữa where và in
+10. sự khác biệt giữa where và in??? câu này ngáo à where in ở trường hợp nào
     - => không có quá nhiều sự khác biệt về hiệu năng
 11. Hiểu biết về primary key, constraints, sequence, trigger, sử dụng temporary table, bulk collection trong Oracle
 #### Oracle Database Concepts Summary
