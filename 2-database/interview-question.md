@@ -100,7 +100,7 @@ like %text% thì không tối ưu cho index vì nó chả biết cái nào mà t
    ### Database Design Summary
 
 Database Design là nền móng của hệ thống, ảnh hưởng trực tiếp tới khả năng scale và hiệu năng.
-
+UUID vs Generated-ID
 #### Quy trình thiết kế:
 1. Phân tích nghiệp vụ: xác định Entity, dữ liệu cần lưu.
 2. Thiết kế ERD: xác định bảng và quan hệ (1-1, 1-N, N-N).

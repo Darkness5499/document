@@ -185,9 +185,7 @@ Giả sử Kafka của anh kéo được 2.000 tin/giây, Java đẩy sang cho A
 
 2.  **Sử dụng Batch Update (Gom lệnh DB):** Nếu có thể, hãy gom các lệnh cập nhật trạng thái task lại thành các lệnh Batch Update của Hibernate/JPA để bắn xuống DB một thể (Ví dụ: 100 lệnh update gom thành 1 câu SQL) thay vì bắn 2.000 câu lệnh đơn lẻ xuống đĩa.
 
-
 Khi anh phối hợp nhịp nhàng: **Nhiều Partitions $\rightarrow$ Java ăn tin theo Batch + chạy đa luồng Concurrency $\rightarrow$ DB chọc nhanh bằng Composite Index**, hệ thống Core BPM của anh Alex hoàn toàn có thể nuốt gọn gàng 3.000 – 5.000 message trên giây mà CPU vẫn cực kỳ mát mẻ!
-
 
 # 3. Làm sao để xứ lý message nhanh nhất
 
